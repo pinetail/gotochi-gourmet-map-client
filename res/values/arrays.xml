@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string-array name="list_category">
+    <item>マクドナルド</item>
+    <item>モスバーガー</item>
+    <item>ロッテリア</item>
+    <item>ケンタッキーフライドチキン</item>
+    <item>ミスタードーナツ</item>
+    <item>クリスピークリームドーナツ</item>
+    <item>サブウェイ</item>
+    <item>バーガーキング</item>
+    <item>ウェンディーズ</item>
+    <item>ファーストキッチン</item>
+    <item>フレッシュネスバーガー</item>
+    <item>ファストフード(その他)</item>
+    <item>銀座ルノアール</item>
+    <item>スターバックス</item>
+    <item>カフェ・ド・クリエ</item>
+    <item>シアトルズベスト</item>
+    <item>タリーズコーヒー</item>
+    <item>ドトール/エクセルシオール</item>
+    <item>プロント</item>
+    <item>シャノアール（ベローチェ）</item>
+    <item>珈琲館</item>
+    <item>sign</item>
+    <item>上島珈琲店</item>
+    <item>喫茶店(その他)</item>
+    <item>メディアカフェポパイ</item>
+    <item>アプレシオ</item>
+    <item>ほっとステーション</item>
+    <item>まんがランド</item>
+    <item>まんが広場</item>
+    <item>ゆう遊空間</item>
+    <item>らくだ</item>
+    <item>アイ・カフェ</item>
+    <item>エアーズカフェ</item>
+    <item>ゲオカフェ</item>
+    <item>ゲラゲラ</item>
+    <item>コミックバスター</item>
+    <item>サイバック</item>
+    <item>スペースクリエイト自遊空間</item>
+    <item>バグース</item>
+    <item>マンボー</item>
+    <item>快活CLUB</item>
+    <item>ワイプ</item>
+    <item>ネットカフェ(その他)</item>
+    <item>デスカット</item>
+    <item>カラオケ</item>
+    <item>コンビニエンスストア</item>
+    <item>メイドカフェなど(萌)</item>
+    <item>公共施設</item>
+    <item>待合室・ラウンジ</item>
+    <item>図書館</item>
+    <item>バー</item>
+    <item>飲食店(その他)</item>
+    <item>居酒屋</item>
+  </string-array>
+  <string-array name="list_wireless">
+    <item>なし</item>
+    <item>BBモバイルポイント</item>
+    <item>フレッツ・スポット</item>
+    <item>SoftbankWifi</item>
+    <item>ホットスポット</item>
+    <item>Mzone</item>
+    <item>livedoor Wireless</item>
+    <item>FREESPOT</item>
+    <item>FON</item>
+    <item>独自</item>
+  </string-array>
+</resources>

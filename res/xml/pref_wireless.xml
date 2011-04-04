@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  android:title="無線LAN"
+   android:key="wireless"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBoxPreference
+      android:key="w_none"
+      android:title="なし"
+      android:defaultValue="true" />
+    <CheckBoxPreference
+      android:key="w_bb_mobile_point"
+      android:title="BBモバイルポイント"
+      android:defaultValue="true" />
+    <CheckBoxPreference
+      android:key="w_flets_spot"
+      android:title="フレッツ・スポット"
+      android:defaultValue="true" />
+    <CheckBoxPreference
+      android:key="w_softbankwifi"
+      android:title="SoftbankWifi"
+      android:defaultValue="true" />
+    <CheckBoxPreference
+      android:key="w_hotspot"
+      android:title="ホットスポット"
+      android:defaultValue="true" />
+    <CheckBoxPreference
+      android:key="w_mzone"
+      android:title="Mzone"
+      android:defaultValue="true" />
+    <CheckBoxPreference
+      android:key="w_livedoor_wireless"
+      android:title="livedoor Wireless"
+      android:defaultValue="true" />
+    <CheckBoxPreference
+      android:key="w_freespot"
+      android:title="FREESPOT"
+      android:defaultValue="true" />
+    <CheckBoxPreference
+      android:key="w_fon"
+      android:title="FON"
+      android:defaultValue="true" />
+    <CheckBoxPreference
+      android:key="w_original"
+      android:title="独自"
+      android:defaultValue="true" />
+</PreferenceScreen>
