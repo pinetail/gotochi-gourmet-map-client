@@ -4,20 +4,8 @@
   <PreferenceScreen android:title="カテゴリ">
      <intent  
           android:action="android.intent.action.MAIN"  
-          android:targetPackage="com.mogya.oasis.android.best"  
-          android:targetClass="com.mogya.oasis.android.best.SettingsCategoryActivity" >  
+          android:targetPackage="jp.pinetail.android.gotochi_gourmet_map"  
+          android:targetClass="jp.pinetail.android.gotochi_gourmet_map.SettingsCategoryActivity" >
      </intent>    
   </PreferenceScreen>
-  <PreferenceScreen android:title="無線LAN">
-     <intent  
-          android:action="android.intent.action.MAIN"  
-          android:targetPackage="com.mogya.oasis.android.best"  
-          android:targetClass="com.mogya.oasis.android.best.SettingsWirelessActivity" >  
-     </intent>    
-  </PreferenceScreen>
-  <CheckBoxPreference
-    android:key="settings_search_poweronly"
-    android:title="電源スポットのみ"
-    android:summary="電源が使えるスポットのみ表示します"
-    android:defaultValue="true" />
 </PreferenceScreen>

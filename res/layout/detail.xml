@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/RelativeLayoutDetail"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_height="fill_parent"
+  android:orientation="vertical"
+  android:layout_width="fill_parent" android:background="@drawable/tile_bg">
+  
+<ScrollView
+    android:id="@+id/ScrollView01"
+    android:layout_width="fill_parent" android:layout_height="fill_parent">
+<LinearLayout
+  android:layout_height="wrap_content" android:orientation="vertical" android:layout_width="fill_parent" android:padding="10dip">
+    <LinearLayout android:layout_width="fill_parent" android:id="@+id/LinearLayout05" android:paddingRight="20dip" android:paddingLeft="20dip" android:orientation="vertical" android:layout_height="wrap_content" android:paddingTop="10dip" android:background="@drawable/border" android:layout_marginTop="10dip" android:paddingBottom="10dip">
+        <LinearLayout android:gravity="center_vertical" android:layout_height="wrap_content" android:id="@+id/LinearLayout06" android:layout_width="wrap_content">
+            <ImageView android:id="@+id/img_category" android:layout_height="wrap_content" android:src="@drawable/icon" android:layout_width="wrap_content"></ImageView>
+            <TextView android:text="TextView" android:textColor="@color/black" android:layout_height="wrap_content" android:layout_width="fill_parent" android:id="@+id/txt_name" android:paddingLeft="5dip"></TextView>
+        </LinearLayout>
+        <LinearLayout android:layout_height="match_parent" android:id="@+id/linearLayout2" android:layout_width="wrap_content" android:gravity="center_vertical">
+            <ImageView android:layout_height="wrap_content" android:src="@drawable/favorite" android:layout_width="wrap_content" android:id="@+id/img_star01"></ImageView>
+            <ImageView android:layout_height="wrap_content" android:src="@drawable/favorite" android:layout_width="wrap_content" android:id="@+id/img_star02"></ImageView>
+            <ImageView android:layout_height="wrap_content" android:src="@drawable/favorite" android:layout_width="wrap_content" android:id="@+id/img_star03"></ImageView>
+            <ImageView android:layout_height="wrap_content" android:src="@drawable/favorite" android:layout_width="wrap_content" android:id="@+id/img_star04"></ImageView>
+            <ImageView android:layout_height="wrap_content" android:layout_width="wrap_content" android:src="@drawable/favorite" android:id="@+id/img_star05"></ImageView>
+            <TextView android:text="TextView" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/txt_score" android:textColor="@color/black" android:layout_marginLeft="5dip"></TextView>
+        </LinearLayout>
+    </LinearLayout>
+<LinearLayout android:id="@+id/LinearLayout08" android:layout_height="wrap_content" android:orientation="vertical" android:layout_width="fill_parent" android:background="@drawable/border" android:layout_marginTop="10dip" android:padding="20dip">
+<LinearLayout android:id="@+id/LinearLayout09" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/border_sale">
+    <ImageView android:id="@+id/imageView2" android:layout_height="wrap_content" android:layout_width="wrap_content" android:src="@drawable/globe"></ImageView>
+<TextView android:text="住所" android:id="@+id/address" android:layout_width="wrap_content" android:layout_height="fill_parent" android:gravity="center_vertical|center" android:textColor="@color/white" android:paddingLeft="3dip" android:paddingRight="6dip"></TextView>
+</LinearLayout><LinearLayout android:id="@+id/LinearLayout10" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingTop="5dip" android:paddingBottom="5dip"><TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:textColor="@color/black" android:paddingLeft="10dip" android:id="@+id/txt_address"></TextView></LinearLayout>
+<LinearLayout android:id="@+id/LinearLayout01" android:layout_height="wrap_content" android:layout_width="wrap_content" android:background="@drawable/border_sale">
+    <ImageView android:id="@+id/imageView5" android:layout_height="wrap_content" android:layout_width="wrap_content" android:src="@drawable/telephone"></ImageView>
+    <TextView android:textColor="@color/white" android:layout_height="fill_parent" android:layout_width="wrap_content" android:id="@+id/TextView02" android:gravity="center_vertical|center" android:text="TEL" android:paddingLeft="3dip" android:paddingRight="6dip"></TextView>
+</LinearLayout>
+<LinearLayout android:paddingTop="5dip" android:id="@+id/LinearLayout03" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingBottom="5dip">
+    <TextView android:textColor="@color/black" android:layout_height="wrap_content" android:layout_width="fill_parent" android:paddingLeft="10dip" android:text="TextView" android:id="@+id/txt_tel" android:autoLink="phone"></TextView>
+</LinearLayout>
+<LinearLayout android:id="@+id/LinearLayout12" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/border_sale" android:gravity="center_vertical">
+    <ImageView android:id="@+id/imageView3" android:layout_height="wrap_content" android:layout_width="wrap_content" android:src="@drawable/clock"></ImageView>
+<TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:textColor="@color/white" android:id="@+id/label_business_hours" android:text="営業時間" android:paddingLeft="3dip" android:paddingRight="6dip"></TextView>
+</LinearLayout><LinearLayout android:id="@+id/LinearLayout13" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingBottom="5dip" android:paddingTop="5dip"><TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:textColor="@color/black" android:paddingLeft="10dip" android:id="@+id/txt_business_hours"></TextView></LinearLayout><LinearLayout android:id="@+id/LinearLayout14" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/border_sale" android:gravity="center_vertical">
+    <ImageView android:id="@+id/imageView4" android:layout_height="wrap_content" android:layout_width="wrap_content" android:src="@drawable/remove_event"></ImageView>
+<TextView android:layout_height="wrap_content" android:id="@+id/date" android:layout_width="wrap_content" android:textColor="@color/white" android:text="定休日" android:paddingLeft="3dip" android:paddingRight="6dip"/>
+</LinearLayout><LinearLayout android:id="@+id/LinearLayout15" android:layout_height="wrap_content" android:paddingBottom="5dip" android:paddingTop="5dip" android:layout_width="fill_parent">
+<TextView android:layout_height="wrap_content" android:layout_width="fill_parent" android:textColor="@color/black" android:paddingLeft="10dip" android:id="@+id/txt_holiday"/></LinearLayout>
+
+
+<LinearLayout android:id="@+id/LinearLayout16" android:layout_height="wrap_content" android:padding="10dip" android:layout_gravity="center" android:layout_width="fill_parent" android:orientation="vertical" android:gravity="center">
+    <Gallery android:id="@+id/Gallery1" android:layout_height="wrap_content" android:layout_width="fill_parent"></Gallery>
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/txt_username" android:textColor="@color/black" android:visibility="gone"></TextView>
+<ProgressBar android:id="@+id/ProgressBar01" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:padding="5dip" style="?android:attr/progressBarStyle"> 
+    </ProgressBar>
+</LinearLayout>
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/linearLayout1" android:gravity="right">
+    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/imageView1" android:src="@drawable/tabelog_api_135x17"></ImageView>
+</LinearLayout>
+</LinearLayout>
+    
+
+    
+
+  </LinearLayout>
+</ScrollView>
+
+
+</RelativeLayout>

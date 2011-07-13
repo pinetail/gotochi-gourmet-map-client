@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="hello">Hello World, MainActivity!</string>
-    <string name="app_name">電源検索</string>
-    <string name="def_zoom_level">15</string>
+    <string name="app_name">ご当地グルメマップ</string>
+    <string name="def_zoom_level">10</string>
     <string name="csv_version">20101027</string>
     <string name="csv_version_split">4</string>
+    <string name="btn_label_back">戻る</string>
+    <string name="tabelog_access_key">6795d5b08580fa120b4cbb9789bb14afe859cf8a</string>
+    <string name="bug_report">バグを報告</string>
+    <string name="bug_report_message">申し訳ありません。未知のエラーにより前回は強制終了しました。よろしければ、今後の修正のために開発者に今回のエラーを送信してください。</string>
+    <string name="bug_report_positive_button">送信内容を確認</string>
+    <string name="bug_report_negative_button">送信しない</string>
+    <string name="tracking_code">UA-20090562-4</string>
+    <string name="api_url">http://ggmap.pinetail.jp/</string>
+    <string name="basic_auth_id">android</string>
+    <string name="basic_auth_passwd">dmQveqBY</string>
+    
 </resources>

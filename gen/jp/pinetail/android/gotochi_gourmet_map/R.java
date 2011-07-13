@@ -8,118 +8,499 @@
 package jp.pinetail.android.gotochi_gourmet_map;
 
 public final class R {
+    public static final class anim {
+        public static final int disappear=0x7f040000;
+        public static final int grow_from_bottom=0x7f040001;
+        public static final int grow_from_bottomleft_to_topright=0x7f040002;
+        public static final int grow_from_bottomright_to_topleft=0x7f040003;
+        public static final int grow_from_top=0x7f040004;
+        public static final int grow_from_topleft_to_bottomright=0x7f040005;
+        public static final int grow_from_topright_to_bottomleft=0x7f040006;
+        public static final int move_in_left=0x7f040007;
+        public static final int move_in_right=0x7f040008;
+        public static final int move_out_left=0x7f040009;
+        public static final int move_out_right=0x7f04000a;
+        public static final int pump_bottom=0x7f04000b;
+        public static final int pump_top=0x7f04000c;
+        public static final int rail=0x7f04000d;
+        public static final int shrink_from_bottom=0x7f04000e;
+        public static final int shrink_from_bottomleft_to_topright=0x7f04000f;
+        public static final int shrink_from_bottomright_to_topleft=0x7f040010;
+        public static final int shrink_from_top=0x7f040011;
+        public static final int shrink_from_topleft_to_bottomright=0x7f040012;
+        public static final int shrink_from_topright_to_bottomleft=0x7f040013;
+    }
     public static final class array {
-        public static final int list_category=0x7f050000;
-        public static final int list_wireless=0x7f050001;
+        public static final int list_category_key=0x7f080000;
+        public static final int list_category_name=0x7f080001;
     }
     public static final class attr {
+        /** <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>none</code></td><td>0</td><td></td></tr>
+<tr><td><code>thumbnail</code></td><td>1</td><td></td></tr>
+<tr><td><code>drop</code></td><td>2</td><td></td></tr>
+</table>
+         */
+        public static final int anr=0x7f010005;
+        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int legend=0x7f010004;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int radius=0x7f010003;
+        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int text=0x7f010000;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int textColor=0x7f010001;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int textSize=0x7f010002;
     }
     public static final class color {
-        public static final int black=0x7f060002;
-        public static final int blue=0x7f060004;
-        public static final int blue_transparent=0x7f060005;
-        public static final int darkgray=0x7f060009;
-        public static final int gold=0x7f060000;
-        public static final int gray=0x7f060008;
-        public static final int green=0x7f060007;
-        public static final int lightblue=0x7f060003;
-        public static final int opaque_shadow=0x7f06000a;
-        public static final int red=0x7f060006;
-        public static final int screenname_color=0x7f06000d;
-        public static final int stat_label_background=0x7f06000b;
-        public static final int stat_label_text=0x7f06000c;
-        public static final int text_color=0x7f06000e;
-        public static final int white=0x7f060001;
+        public static final int black=0x7f0a0002;
+        public static final int blue=0x7f0a0004;
+        public static final int blue_transparent=0x7f0a0005;
+        public static final int darkgray=0x7f0a0009;
+        public static final int gold=0x7f0a0000;
+        public static final int gray=0x7f0a0008;
+        public static final int green=0x7f0a0007;
+        public static final int lightblue=0x7f0a0003;
+        public static final int opaque_shadow=0x7f0a000a;
+        public static final int red=0x7f0a0006;
+        public static final int screenname_color=0x7f0a000d;
+        public static final int stat_label_background=0x7f0a000b;
+        public static final int stat_label_text=0x7f0a000c;
+        public static final int tab_background=0x7f0a000f;
+        public static final int tab_textcolor=0x7f0a0010;
+        public static final int text_color=0x7f0a000e;
+        public static final int white=0x7f0a0001;
     }
     public static final class drawable {
-        public static final int address=0x7f020000;
-        public static final int border=0x7f020001;
-        public static final int border_bottom=0x7f020002;
-        public static final int compass=0x7f020003;
-        public static final int compass_off=0x7f020004;
-        public static final int compass_on=0x7f020005;
-        public static final int default_4=0x7f020006;
-        public static final int icon=0x7f020007;
-        public static final int icon_01=0x7f020008;
-        public static final int icon_02=0x7f020009;
-        public static final int icon_03=0x7f02000a;
-        public static final int icon_04=0x7f02000b;
-        public static final int icon_05=0x7f02000c;
-        public static final int icon_06=0x7f02000d;
-        public static final int icon_07=0x7f02000e;
-        public static final int icon_08=0x7f02000f;
-        public static final int icon_09=0x7f020010;
-        public static final int icon_10=0x7f020011;
-        public static final int icon_11=0x7f020012;
-        public static final int icon_12=0x7f020013;
-        public static final int icon_13=0x7f020014;
-        public static final int icon_14=0x7f020015;
-        public static final int icon_15=0x7f020016;
-        public static final int icon_16=0x7f020017;
-        public static final int icon_17=0x7f020018;
-        public static final int icon_18=0x7f020019;
-        public static final int icon_19=0x7f02001a;
-        public static final int icon_20=0x7f02001b;
-        public static final int icon_21=0x7f02001c;
-        public static final int icon_22=0x7f02001d;
-        public static final int icon_23=0x7f02001e;
-        public static final int icon_24=0x7f02001f;
-        public static final int icon_4=0x7f020020;
-        public static final int icon_l=0x7f020021;
-        public static final int icon_l_4=0x7f020022;
-        public static final int icon_power_ok2=0x7f020023;
-        public static final int icon_power_ok3=0x7f020024;
-        public static final int icon_power_ok4=0x7f020025;
-        public static final int icon_wireless_gray=0x7f020026;
-        public static final int load=0x7f020027;
-        public static final int memo=0x7f020028;
-        public static final int phone=0x7f020029;
-        public static final int point_red=0x7f02002a;
-        public static final int power=0x7f02002b;
-        public static final int wifi=0x7f02002c;
-        public static final int www=0x7f02002d;
+        public static final int action_item_btn=0x7f020000;
+        public static final int action_item_selected=0x7f020001;
+        public static final int address=0x7f020002;
+        public static final int arrow_down=0x7f020003;
+        public static final int arrow_up=0x7f020004;
+        public static final int back=0x7f020005;
+        public static final int bg=0x7f020006;
+        public static final int border=0x7f020007;
+        public static final int border_bottom=0x7f020008;
+        public static final int border_category=0x7f020009;
+        public static final int border_img=0x7f02000a;
+        public static final int border_kind_member=0x7f02000b;
+        public static final int border_label=0x7f02000c;
+        public static final int border_post_help=0x7f02000d;
+        public static final int border_sale=0x7f02000e;
+        public static final int browser=0x7f02000f;
+        public static final int btn_back=0x7f020010;
+        public static final int btn_back_press=0x7f020011;
+        public static final int btn_back_states=0x7f020012;
+        public static final int button_bar=0x7f020013;
+        public static final int calendar=0x7f020014;
+        public static final int clock=0x7f020015;
+        public static final int clock24=0x7f020016;
+        public static final int color_stateful=0x7f020017;
+        public static final int comment=0x7f020018;
+        public static final int favorite=0x7f020019;
+        public static final int globe=0x7f02001a;
+        public static final int green_flag=0x7f02001b;
+        public static final int icon=0x7f02001c;
+        public static final int icon_01=0x7f02001d;
+        public static final int icon_02=0x7f02001e;
+        public static final int icon_03=0x7f02001f;
+        public static final int icon_04=0x7f020020;
+        public static final int icon_05=0x7f020021;
+        public static final int icon_06=0x7f020022;
+        public static final int icon_07=0x7f020023;
+        public static final int icon_08=0x7f020024;
+        public static final int icon_09=0x7f020025;
+        public static final int icon_10=0x7f020026;
+        public static final int icon_11=0x7f020027;
+        public static final int icon_12=0x7f020028;
+        public static final int icon_13=0x7f020029;
+        public static final int icon_14=0x7f02002a;
+        public static final int icon_15=0x7f02002b;
+        public static final int icon_16=0x7f02002c;
+        public static final int icon_17=0x7f02002d;
+        public static final int icon_18=0x7f02002e;
+        public static final int icon_19=0x7f02002f;
+        public static final int icon_20=0x7f020030;
+        public static final int icon_21=0x7f020031;
+        public static final int icon_22=0x7f020032;
+        public static final int icon_23=0x7f020033;
+        public static final int icon_24=0x7f020034;
+        public static final int icon_gourmet=0x7f020035;
+        public static final int info=0x7f020036;
+        public static final int kake=0x7f020037;
+        public static final int map_blue=0x7f020038;
+        public static final int open_store=0x7f020039;
+        public static final int page=0x7f02003a;
+        public static final int point_red=0x7f02003b;
+        public static final int popup=0x7f02003c;
+        public static final int press_state=0x7f02003d;
+        public static final int pressed_state=0x7f02003e;
+        public static final int quickcontact_arrow_down=0x7f02003f;
+        public static final int quickcontact_arrow_up=0x7f020040;
+        public static final int quickcontact_bottom_frame=0x7f020041;
+        public static final int quickcontact_disambig_bottom_bg=0x7f020042;
+        public static final int quickcontact_disambig_divider=0x7f020043;
+        public static final int quickcontact_drop_shadow=0x7f020044;
+        public static final int quickcontact_photo_frame=0x7f020045;
+        public static final int quickcontact_slider_background=0x7f020046;
+        public static final int quickcontact_slider_btn=0x7f020047;
+        public static final int quickcontact_slider_btn_normal=0x7f020048;
+        public static final int quickcontact_slider_btn_on=0x7f020049;
+        public static final int quickcontact_slider_btn_pressed=0x7f02004a;
+        public static final int quickcontact_slider_btn_selected=0x7f02004b;
+        public static final int quickcontact_slider_grip_left=0x7f02004c;
+        public static final int quickcontact_slider_grip_right=0x7f02004d;
+        public static final int quickcontact_top_frame=0x7f02004e;
+        public static final int remove_event=0x7f02004f;
+        public static final int remove_event24=0x7f020050;
+        public static final int star_empty=0x7f020051;
+        public static final int star_empty24=0x7f020052;
+        public static final int star_full=0x7f020053;
+        public static final int star_full24=0x7f020054;
+        public static final int star_half_full=0x7f020055;
+        public static final int star_half_full24=0x7f020056;
+        public static final int sym_action_add=0x7f020057;
+        public static final int sym_action_map=0x7f020058;
+        public static final int tabelog_api_135x17=0x7f020059;
+        public static final int telephone=0x7f02005a;
+        public static final int tile_bg=0x7f02005b;
+        public static final int under_line=0x7f02005c;
+        public static final int under_line_repeat=0x7f02005d;
+        public static final int user=0x7f02005e;
     }
     public static final class id {
-        public static final int ImageView03=0x7f08000a;
-        public static final int ImageView04=0x7f08000e;
-        public static final int ImageView05=0x7f080011;
-        public static final int ImageView06=0x7f080017;
-        public static final int ImageView07=0x7f080014;
-        public static final int LinearLayout01=0x7f080004;
-        public static final int ScrollView01=0x7f080007;
-        public static final int TableLayout01=0x7f080008;
-        public static final int TableRow01=0x7f080009;
-        public static final int TableRow02=0x7f08000d;
-        public static final int TableRow03=0x7f080010;
-        public static final int TableRow04=0x7f080013;
-        public static final int TableRow05=0x7f080016;
-        public static final int TextView01=0x7f08000b;
-        public static final int admakerview=0x7f080006;
-        public static final int header_ad=0x7f080003;
-        public static final int main_map=0x7f080005;
-        public static final int mainview=0x7f080002;
-        public static final int progressview=0x7f080001;
-        public static final int screen=0x7f080000;
-        public static final int txt_address=0x7f08000c;
-        public static final int txt_other=0x7f080018;
-        public static final int txt_powersupply=0x7f080012;
-        public static final int txt_tel=0x7f08000f;
-        public static final int txt_wireless=0x7f080015;
+        public static final int Gallery1=0x7f090033;
+        public static final int LinearLayout01=0x7f090024;
+        public static final int LinearLayout03=0x7f090006;
+        public static final int LinearLayout04=0x7f090037;
+        public static final int LinearLayout05=0x7f090015;
+        public static final int LinearLayout06=0x7f090016;
+        public static final int LinearLayout08=0x7f09001f;
+        public static final int LinearLayout09=0x7f090020;
+        public static final int LinearLayout10=0x7f090022;
+        public static final int LinearLayout11=0x7f090036;
+        public static final int LinearLayout12=0x7f090028;
+        public static final int LinearLayout13=0x7f09002b;
+        public static final int LinearLayout14=0x7f09002d;
+        public static final int LinearLayout15=0x7f090030;
+        public static final int LinearLayout16=0x7f090032;
+        public static final int ProgressBar01=0x7f090035;
+        public static final int RelativeLayout01=0x7f090005;
+        public static final int RelativeLayoutDetail=0x7f090013;
+        public static final int ScrollView01=0x7f090014;
+        public static final int TextView02=0x7f090026;
+        public static final int adView=0x7f090039;
+        public static final int address=0x7f090021;
+        public static final int arrow_down=0x7f09004a;
+        public static final int arrow_up=0x7f090049;
+        public static final int btn_back=0x7f090038;
+        public static final int btn_list=0x7f090046;
+        public static final int date=0x7f09002f;
+        public static final int drop=0x7f090002;
+        public static final int footer=0x7f09004d;
+        public static final int header2=0x7f09004b;
+        public static final int header_ad=0x7f09003d;
+        public static final int icon=0x7f090003;
+        public static final int imageView1=0x7f09000f;
+        public static final int imageView2=0x7f09000c;
+        public static final int imageView3=0x7f090029;
+        public static final int imageView4=0x7f09002e;
+        public static final int imageView5=0x7f090025;
+        public static final int imageview=0x7f090011;
+        public static final int img_category=0x7f090017;
+        public static final int img_star01=0x7f090019;
+        public static final int img_star02=0x7f09001a;
+        public static final int img_star03=0x7f09001b;
+        public static final int img_star04=0x7f09001c;
+        public static final int img_star05=0x7f09001d;
+        public static final int label_business_hours=0x7f09002a;
+        public static final int linearLayout1=0x7f09000e;
+        public static final int linearLayout2=0x7f09000b;
+        public static final int linearLayout3=0x7f09000a;
+        public static final int linearLayout4=0x7f09003f;
+        public static final int main_map=0x7f090045;
+        public static final int mainview=0x7f090044;
+        public static final int name=0x7f09003e;
+        public static final int none=0x7f090000;
+        public static final int progress=0x7f090041;
+        public static final int radio_sort=0x7f09003a;
+        public static final int savedList=0x7f090007;
+        public static final int screen=0x7f090043;
+        public static final int scroll=0x7f09004c;
+        public static final int scroller=0x7f090047;
+        public static final int sort_score=0x7f09003b;
+        public static final int sort_shop_name=0x7f09003c;
+        public static final int textView1=0x7f090042;
+        public static final int textview=0x7f090012;
+        public static final int thumbnail=0x7f090001;
+        public static final int title=0x7f090004;
+        public static final int tracks=0x7f090048;
+        public static final int txtBusinessHours=0x7f090040;
+        public static final int txt_address=0x7f090023;
+        public static final int txt_business_hours=0x7f09002c;
+        public static final int txt_comment=0x7f090009;
+        public static final int txt_holiday=0x7f090031;
+        public static final int txt_name=0x7f090018;
+        public static final int txt_nickname=0x7f090010;
+        public static final int txt_review_date=0x7f09000d;
+        public static final int txt_score=0x7f09001e;
+        public static final int txt_tel=0x7f090027;
+        public static final int txt_title=0x7f090008;
+        public static final int txt_username=0x7f090034;
     }
     public static final class layout {
-        public static final int main=0x7f030000;
-        public static final int spot=0x7f030001;
+        public static final int action_item_btn=0x7f030000;
+        public static final int action_item_list=0x7f030001;
+        public static final int comments_list=0x7f030002;
+        public static final int comments_row=0x7f030003;
+        public static final int custom_tabwidget=0x7f030004;
+        public static final int detail=0x7f030005;
+        public static final int detail_tab=0x7f030006;
+        public static final int list=0x7f030007;
+        public static final int list_footer=0x7f030008;
+        public static final int list_row=0x7f030009;
+        public static final int listview_footer=0x7f03000a;
+        public static final int main=0x7f03000b;
+        public static final int popup=0x7f03000c;
+        public static final int quickaction=0x7f03000d;
     }
     public static final class string {
-        public static final int app_name=0x7f070001;
-        public static final int csv_version=0x7f070003;
-        public static final int csv_version_split=0x7f070004;
-        public static final int def_zoom_level=0x7f070002;
-        public static final int hello=0x7f070000;
+        public static final int api_url=0x7f06000c;
+        public static final int app_name=0x7f060001;
+        public static final int basic_auth_id=0x7f06000d;
+        public static final int basic_auth_passwd=0x7f06000e;
+        public static final int btn_label_back=0x7f060005;
+        public static final int bug_report=0x7f060007;
+        public static final int bug_report_message=0x7f060008;
+        public static final int bug_report_negative_button=0x7f06000a;
+        public static final int bug_report_positive_button=0x7f060009;
+        public static final int csv_version=0x7f060003;
+        public static final int csv_version_split=0x7f060004;
+        public static final int def_zoom_level=0x7f060002;
+        public static final int hello=0x7f060000;
+        public static final int tabelog_access_key=0x7f060006;
+        public static final int tracking_code=0x7f06000b;
+    }
+    public static final class style {
+        public static final int Animations=0x7f070000;
+        /**  PopDownMenu  Style 
+         */
+        public static final int Animations_PopDownMenu=0x7f070001;
+        public static final int Animations_PopDownMenu_Center=0x7f070002;
+        public static final int Animations_PopDownMenu_Left=0x7f070003;
+        public static final int Animations_PopDownMenu_Reflect=0x7f070005;
+        public static final int Animations_PopDownMenu_Right=0x7f070004;
+        /**  PopUpMenu  Style 
+         */
+        public static final int Animations_PopUpMenu=0x7f070006;
+        public static final int Animations_PopUpMenu_Center=0x7f070007;
+        public static final int Animations_PopUpMenu_Left=0x7f070008;
+        public static final int Animations_PopUpMenu_Reflect=0x7f07000a;
+        public static final int Animations_PopUpMenu_Right=0x7f070009;
     }
     public static final class xml {
-        public static final int pref=0x7f040000;
-        public static final int pref_category=0x7f040001;
-        public static final int pref_wireless=0x7f040002;
+        public static final int pref=0x7f050000;
+        public static final int pref_category=0x7f050001;
+        public static final int pref_wireless=0x7f050002;
     }
+    public static final class styleable {
+        /**  These are attributes used with 'DraggableDot' drawables in
+         view/DragAndDropActivity.java and view/DraggableDot.java 
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #DraggableDot_anr jp.pinetail.android.gotochi_gourmet_map:anr}</code></td><td></td></tr>
+           <tr><td><code>{@link #DraggableDot_legend jp.pinetail.android.gotochi_gourmet_map:legend}</code></td><td></td></tr>
+           <tr><td><code>{@link #DraggableDot_radius jp.pinetail.android.gotochi_gourmet_map:radius}</code></td><td></td></tr>
+           </table>
+           @see #DraggableDot_anr
+           @see #DraggableDot_legend
+           @see #DraggableDot_radius
+         */
+        public static final int[] DraggableDot = {
+            0x7f010003, 0x7f010004, 0x7f010005
+        };
+        /**
+          <p>This symbol is the offset where the {@link jp.pinetail.android.gotochi_gourmet_map.R.attr#anr}
+          attribute's value can be found in the {@link #DraggableDot} array.
+
+
+          <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>none</code></td><td>0</td><td></td></tr>
+<tr><td><code>thumbnail</code></td><td>1</td><td></td></tr>
+<tr><td><code>drop</code></td><td>2</td><td></td></tr>
+</table>
+          @attr name android:anr
+        */
+        public static final int DraggableDot_anr = 2;
+        /**
+          <p>This symbol is the offset where the {@link jp.pinetail.android.gotochi_gourmet_map.R.attr#legend}
+          attribute's value can be found in the {@link #DraggableDot} array.
+
+
+          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:legend
+        */
+        public static final int DraggableDot_legend = 1;
+        /**
+          <p>This symbol is the offset where the {@link jp.pinetail.android.gotochi_gourmet_map.R.attr#radius}
+          attribute's value can be found in the {@link #DraggableDot} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:radius
+        */
+        public static final int DraggableDot_radius = 0;
+        /**  These are the attributes that we want to retrieve from the theme
+         in view/Gallery1.java 
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #Gallery1_android_galleryItemBackground jp.pinetail.android.gotochi_gourmet_map:android_galleryItemBackground}</code></td><td></td></tr>
+           <tr><td><code>{@link #Gallery1_text jp.pinetail.android.gotochi_gourmet_map:text}</code></td><td></td></tr>
+           <tr><td><code>{@link #Gallery1_textColor jp.pinetail.android.gotochi_gourmet_map:textColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #Gallery1_textSize jp.pinetail.android.gotochi_gourmet_map:textSize}</code></td><td></td></tr>
+           </table>
+           @see #Gallery1_android_galleryItemBackground
+           @see #Gallery1_text
+           @see #Gallery1_textColor
+           @see #Gallery1_textSize
+         */
+        public static final int[] Gallery1 = {
+            0x0101004c, 0x7f010000, 0x7f010001, 0x7f010002
+        };
+        /**
+          <p>This symbol is the offset where the {@link jp.pinetail.android.gotochi_gourmet_map.R.attr#android_galleryItemBackground}
+          attribute's value can be found in the {@link #Gallery1} array.
+          @attr name android:android_galleryItemBackground
+        */
+        public static final int Gallery1_android_galleryItemBackground = 0;
+        /**
+          <p>This symbol is the offset where the {@link jp.pinetail.android.gotochi_gourmet_map.R.attr#text}
+          attribute's value can be found in the {@link #Gallery1} array.
+
+
+          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:text
+        */
+        public static final int Gallery1_text = 1;
+        /**
+          <p>This symbol is the offset where the {@link jp.pinetail.android.gotochi_gourmet_map.R.attr#textColor}
+          attribute's value can be found in the {@link #Gallery1} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:textColor
+        */
+        public static final int Gallery1_textColor = 2;
+        /**
+          <p>This symbol is the offset where the {@link jp.pinetail.android.gotochi_gourmet_map.R.attr#textSize}
+          attribute's value can be found in the {@link #Gallery1} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:textSize
+        */
+        public static final int Gallery1_textSize = 3;
+        /**  These are the attributes that we want to retrieve from the theme
+         in app/PreferencesFromCode.java 
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #TogglePrefAttrs_android_preferenceLayoutChild jp.pinetail.android.gotochi_gourmet_map:android_preferenceLayoutChild}</code></td><td></td></tr>
+           </table>
+           @see #TogglePrefAttrs_android_preferenceLayoutChild
+         */
+        public static final int[] TogglePrefAttrs = {
+            0x01010094
+        };
+        /**
+          <p>This symbol is the offset where the {@link jp.pinetail.android.gotochi_gourmet_map.R.attr#android_preferenceLayoutChild}
+          attribute's value can be found in the {@link #TogglePrefAttrs} array.
+          @attr name android:android_preferenceLayoutChild
+        */
+        public static final int TogglePrefAttrs_android_preferenceLayoutChild = 0;
+    };
 }

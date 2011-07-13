@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"  
+    android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="vertical">  
+      
+    <LinearLayout android:id="@+id/LinearLayout03" android:layout_height="fill_parent" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_gravity="left" android:gravity="left" android:paddingLeft="6dip" android:paddingRight="6dip" android:paddingTop="6dip">
+    <TextView android:paddingRight="6dip" android:gravity="center_vertical" android:textSize="13dip" android:layout_height="fill_parent" android:textStyle="bold" android:text="TextView" android:layout_width="wrap_content" android:id="@+id/txt_title" android:textColor="@color/blue"></TextView>
+</LinearLayout>
+<LinearLayout android:orientation="vertical"  
+        android:layout_weight="1"  
+        android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingLeft="5dip" android:paddingTop="6dip">
+        <TextView android:ellipsize="marquee" android:textColor="@color/text_color" android:layout_height="fill_parent" android:layout_weight="1" android:text="住所" android:layout_width="fill_parent" android:id="@+id/txt_comment"></TextView>
+          
+    
+
+
+</LinearLayout>
+<LinearLayout android:id="@+id/linearLayout3" android:layout_height="wrap_content" android:layout_width="fill_parent" android:padding="6dip" android:gravity="right">
+    <LinearLayout android:gravity="center_vertical" android:layout_height="match_parent" android:id="@+id/linearLayout2" android:layout_width="wrap_content">
+        <ImageView android:id="@+id/imageView2" android:layout_height="wrap_content" android:src="@drawable/calendar" android:layout_width="wrap_content"></ImageView>
+        <TextView android:id="@+id/txt_review_date" android:text="TextView" android:textColor="@color/black" android:layout_height="wrap_content" android:layout_width="wrap_content"></TextView>
+    </LinearLayout>
+    <LinearLayout android:layout_height="match_parent" android:id="@+id/linearLayout1" android:layout_width="wrap_content" android:gravity="center_vertical">
+        <ImageView android:id="@+id/imageView1" android:layout_height="wrap_content" android:src="@drawable/user" android:layout_width="wrap_content"></ImageView>
+        <TextView android:id="@+id/txt_nickname" android:text="TextView" android:textColor="@color/text_color" android:layout_height="wrap_content" android:layout_width="wrap_content"></TextView>
+    </LinearLayout>
+</LinearLayout>  
+
+
+</LinearLayout>  

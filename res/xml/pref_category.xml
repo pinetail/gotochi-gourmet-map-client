@@ -2,216 +2,52 @@
 <PreferenceScreen
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:title="カテゴリ" android:key="category">
+    <PreferenceCategory android:title="秋田県" android:key="akita">
     <CheckBoxPreference
-      android:key="c_macdnalds"
-      android:title="マクドナルド"
+      android:key="akita_yokote_yakisoba"
+      android:title="横手やきそば"
+      android:defaultValue="true" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="宮城県" android:key="miyagi">
+    <CheckBoxPreference
+      android:key="miyagi_gyutan"
+      android:title="牛タン"
+      android:defaultValue="true" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="静岡県" android:key="shizuoka">
+    <CheckBoxPreference
+      android:key="shizuoka_oden"
+      android:title="静岡おでん"
       android:defaultValue="true" />
     <CheckBoxPreference
-      android:key="c_mosbuger"
-      android:title="モスバーガー"
+      android:key="shizuoka_fujinomiya_yakisoba"
+      android:title="富士宮やきそば"
+      android:defaultValue="true" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="香川県" android:key="kagawa">
+    <CheckBoxPreference
+      android:key="kagawa_sanuki_udon"
+      android:title="讃岐うどん"
+      android:defaultValue="true" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="広島県" android:key="hiroshima">
+    <CheckBoxPreference
+      android:key="hiroshima_okonomiyaki"
+      android:title="広島風お好み焼き"
+      android:defaultValue="true" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="長崎県" android:key="nagasaki">
+    <CheckBoxPreference
+      android:key="nagasaki_chanpon"
+      android:title="長崎ちゃんぽん"
       android:defaultValue="true" />
     <CheckBoxPreference
-      android:key="c_lotteria"
-      android:title="ロッテリア"
+      android:key="nagasaki_torukoraisu"
+      android:title="トルコライス"
       android:defaultValue="true" />
     <CheckBoxPreference
-      android:key="c_kfc"
-      android:title="ケンタッキーフライドチキン"
+      android:key="nagasaki_sasebo_burger"
+      android:title="佐世保バーガー"
       android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="c_misterdonut"
-      android:title="ミスタードーナツ"
-      android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="c_krispykreme"
-      android:title="クリスピークリームドーナツ"
-      android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="c_subway"
-      android:title="サブウェイ"
-      android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="c_bugerking"
-      android:title="バーガーキング"
-      android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="c_wendys"
-      android:title="ウェンディーズ"
-      android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="c_firstkitchen"
-      android:title="ファーストキッチン"
-      android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="c_freshnessburger"
-      android:title="フレッシュネスバーガー"
-      android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="c_fastfood"
-      android:title="ファストフード(その他)"
-      android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="c_ginzarenoir"
-      android:title="銀座ルノアール"
-      android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="c_starbucks"
-      android:title="スターバックス"
-      android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="c_cafedecrie"
-      android:title="カフェ・ド・クリエ"
-      android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="c_seattlesbest"
-      android:title="シアトルズベスト"
-      android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="c_tullyscoffee"
-      android:title="タリーズコーヒー"
-      android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="c_doutor"
-      android:title="ドトール/エクセルシオール"
-      android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="c_pronto"
-      android:title="プロント"
-      android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="c_chatnoir"
-      android:title="シャノアール（ベローチェ）"
-      android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="c_kohikan"
-      android:title="珈琲館"
-      android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="c_sign"
-      android:title="sign"
-      android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="c_ueshima_coffee_ten"
-      android:title="上島珈琲店"
-      android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="c_cafe"
-      android:title="喫茶店(その他)"
-      android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="c_media_cafe"
-      android:title="メディアカフェポパイ"
-      android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="c_aprecio"
-      android:title="アプレシオ"
-      android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="c_hotstation"
-      android:title="ほっとステーション"
-      android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="c_mangaland"
-      android:title="まんがランド"
-      android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="c_mangahiroba"
-      android:title="まんが広場"
-      android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="c_yuyu_kukan"
-      android:title="ゆう遊空間"
-      android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="c_rakutama"
-      android:title="らくだ"
-      android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="c_icafe"
-      android:title="アイ・カフェ"
-      android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="c_airscafe"
-      android:title="エアーズカフェ"
-      android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="c_geocafe"
-      android:title="ゲオカフェ"
-      android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="c_geragera"
-      android:title="ゲラゲラ"
-      android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="c_comicbuster"
-      android:title="コミックバスター"
-      android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="c_cybac"
-      android:title="サイバック"
-      android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="c_jiqoo"
-      android:title="スペースクリエイト自遊空間"
-      android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="c_bagus"
-      android:title="バグース"
-      android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="c_manboo"
-      android:title="マンボー"
-      android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="c_kaikatsu"
-      android:title="快活CLUB"
-      android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="c_wipe"
-      android:title="ワイプ"
-      android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="c_netcafe"
-      android:title="ネットカフェ(その他)"
-      android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="c_deskat"
-      android:title="デスカット"
-      android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="c_karaoke"
-      android:title="カラオケ"
-      android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="c_convenience_store"
-      android:title="コンビニエンスストア"
-      android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="c_maidcafe"
-      android:title="メイドカフェなど(萌)"
-      android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="c_public_institution"
-      android:title="公共施設"
-      android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="c_lounge"
-      android:title="待合室・ラウンジ"
-      android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="c_library"
-      android:title="図書館"
-      android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="c_bar"
-      android:title="バー"
-      android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="c_restaurant"
-      android:title="飲食店(その他)"
-      android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="c_izakaya"
-      android:title="居酒屋"
-      android:defaultValue="true" />  
+    </PreferenceCategory>
 </PreferenceScreen>

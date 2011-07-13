@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:id="@+id/RelativeLayout01"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content">
+  <LinearLayout
+    android:id="@+id/LinearLayout01"
+    android:layout_height="wrap_content"
+    android:layout_width="fill_parent"
+    android:layout_alignParentTop="true" android:background="@drawable/button_bar">
+    <LinearLayout
+      android:id="@+id/LinearLayout04"
+      android:layout_weight="1" android:gravity="left|center_vertical" android:layout_width="wrap_content" android:layout_height="fill_parent">
+      
+    <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/btn_back" android:text="戻る" android:textColor="@color/white" android:layout_marginLeft="10dip" android:background="@drawable/btn_back_states"></Button>
+</LinearLayout>
+    <LinearLayout
+      android:id="@+id/LinearLayout05"
+      android:layout_weight="1"
+      android:layout_width="wrap_content"
+      android:gravity="right|center_vertical"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center_vertical">
+      <RadioGroup
+        android:id="@+id/radio_sort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5px"
+        android:orientation="horizontal">
+        <RadioButton
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginRight="5px"
+          android:text="高得点順" android:id="@+id/sort_score"/>
+        <RadioButton
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="名前順" android:id="@+id/sort_shop_name"/>
+      </RadioGroup>
+    </LinearLayout>
+  </LinearLayout>
+  <LinearLayout
+    android:id="@+id/LinearLayout03"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_above="@+id/linearLayout1" android:layout_below="@+id/LinearLayout01">
+    <ListView android:id="@+id/savedList"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content" />
+  </LinearLayout>
+  <LinearLayout android:id="@+id/linearLayout1" android:layout_above="@+id/header_ad" android:layout_width="fill_parent" android:gravity="bottom|right" android:layout_height="wrap_content">
+      <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/imageView1" android:src="@drawable/tabelog_api_135x17"></ImageView>
+  </LinearLayout>
+   <LinearLayout android:layout_height="wrap_content" 
+     android:id="@+id/header_ad"
+     android:layout_width="fill_parent"
+     android:gravity="center"
+     android:layout_alignParentBottom="true">
+<jp.Adlantis.Android.AdlantisView
+    android:id="@+id/adView"
+    android:layout_width="fill_parent" 
+    android:layout_height="50dp"
+    android:layout_weight="1"
+    android:layout_centerVertical="true"
+    android:layout_centerHorizontal="true" 
+    android:gravity="center"
+     />
+   </LinearLayout>
+
+
+
+
+</RelativeLayout>
+
