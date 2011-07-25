@@ -36,7 +36,7 @@ public class Util {
     }
     
     public static void logging(String msg) {
-        Log.i("oasis", msg);
+//        Log.i("gotochi", msg);
     }
     
     public static int getRowNum(String fname) throws IOException {

@@ -85,20 +85,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 if (nextLine.length < 14) {
                     continue;
                 }
-                stmt.bindString(1, nextLine[0].trim()); // entry_id
-                stmt.bindString(2, nextLine[1].trim()); // title
-                stmt.bindString(3, nextLine[2].trim()); // category
-                stmt.bindString(4, nextLine[3].trim()); // address
-                stmt.bindString(5, nextLine[4].trim()); // latitude
-                stmt.bindString(6, nextLine[5].trim()); // longitude
-                stmt.bindString(7, nextLine[6].trim()); // url_pc
-                stmt.bindString(8, nextLine[7].trim()); // url_mobile
-                stmt.bindString(9, nextLine[8].trim()); // wireless
-                stmt.bindString(10, nextLine[9].trim()); // powersupply
-                stmt.bindString(11, nextLine[10].trim()); // tel
-                stmt.bindString(12, nextLine[11].trim()); // other
-                stmt.bindString(13, nextLine[12].trim()); // other
-                stmt.bindString(14, nextLine[13].trim()); // other
+                stmt.bindString(1, nextLine[0].trim()); // name
+                stmt.bindString(2, nextLine[1].trim()); // address
+                stmt.bindString(3, nextLine[2].trim()); // tel
+                stmt.bindString(4, nextLine[3].trim()); // category
+                stmt.bindString(5, nextLine[4].trim()); // tabelog_id
+                stmt.bindString(6, nextLine[5].trim()); // business_hours
+                stmt.bindString(7, nextLine[6].trim()); // holiday
+                stmt.bindString(8, nextLine[7].trim()); // latitude
+                stmt.bindString(9, nextLine[8].trim()); // longitude
+                stmt.bindString(10, nextLine[9].trim()); // score
+                stmt.bindString(11, nextLine[10].trim()); // tabelog_url
+                stmt.bindString(12, ""); // tabelog_mobile_url
+                stmt.bindString(13, nextLine[12].trim()); // station
+                stmt.bindString(14, nextLine[13].trim()); // memo
                 stmt.executeInsert();
                 int increment = (int) ((double) num / size * 50);
                 Util.logging(String.valueOf(increment));
@@ -124,6 +124,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             }
             stmt.close();
             db.endTransaction();
+            db.execSQL("vacuum");
         }
     
         return false;

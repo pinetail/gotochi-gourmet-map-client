@@ -2,16 +2,48 @@
 <PreferenceScreen
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:title="カテゴリ" android:key="category">
-    <PreferenceCategory android:title="秋田県" android:key="akita">
+    <PreferenceCategory android:title="岩手県" android:key="iwate">
     <CheckBoxPreference
-      android:key="akita_yokote_yakisoba"
-      android:title="横手やきそば"
+      android:key="iwate_wankosoba"
+      android:title="わんこそば"
+      android:defaultValue="true" />
+    <CheckBoxPreference
+      android:key="iwate_morioka_reimen"
+      android:title="盛岡冷麺"
+      android:defaultValue="true" />
+    <CheckBoxPreference
+      android:key="iwate_morioka_jajamen"
+      android:title="盛岡じゃじゃ麺"
       android:defaultValue="true" />
     </PreferenceCategory>
     <PreferenceCategory android:title="宮城県" android:key="miyagi">
     <CheckBoxPreference
       android:key="miyagi_gyutan"
       android:title="牛タン"
+      android:defaultValue="true" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="秋田県" android:key="akita">
+    <CheckBoxPreference
+      android:key="akita_yokote_yakisoba"
+      android:title="横手やきそば"
+      android:defaultValue="true" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="福島県" android:key="fukushima">
+    <CheckBoxPreference
+      android:key="fukushima_kitakata_ramen"
+      android:title="喜多方ラーメン"
+      android:defaultValue="true" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="群馬県" android:key="gunma">
+    <CheckBoxPreference
+      android:key="gunma_mizusawa_udon"
+      android:title="水沢うどん"
+      android:defaultValue="true" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="新潟県" android:key="niigata">
+    <CheckBoxPreference
+      android:key="niigata_itarian"
+      android:title="イタリアン"
       android:defaultValue="true" />
     </PreferenceCategory>
     <PreferenceCategory android:title="静岡県" android:key="shizuoka">
@@ -22,6 +54,16 @@
     <CheckBoxPreference
       android:key="shizuoka_fujinomiya_yakisoba"
       android:title="富士宮やきそば"
+      android:defaultValue="true" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="愛知県" android:key="aichi">
+    <CheckBoxPreference
+      android:key="aichi_hitsumabushi"
+      android:title="ひつまぶし"
+      android:defaultValue="true" />
+    <CheckBoxPreference
+      android:key="aichi_misokatsu"
+      android:title="味噌カツ"
       android:defaultValue="true" />
     </PreferenceCategory>
     <PreferenceCategory android:title="香川県" android:key="kagawa">

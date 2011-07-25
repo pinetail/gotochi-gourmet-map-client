@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="hello">Hello World, MainActivity!</string>
-    <string name="app_name">ご当地グルメマップ</string>
+    <string name="app_name">ご当地ぐるめ！</string>
     <string name="def_zoom_level">10</string>
     <string name="csv_version">20101027</string>
     <string name="csv_version_split">4</string>

@@ -10,7 +10,7 @@
           </LinearLayout>
       <LinearLayout android:id="@+id/LinearLayout01" android:layout_toLeftOf="@+id/main_map" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@+id/header_ad">
 
-      <com.google.android.maps.MapView xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/main_map" android:layout_width="fill_parent" android:layout_height="fill_parent" android:enabled="true" android:clickable="true" android:apiKey="04KLh3UZFDQGqWs9x0T7QXbEl7ARpw7EnEdUSJA"/></LinearLayout>
+      <com.google.android.maps.MapView xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/main_map" android:layout_width="fill_parent" android:layout_height="fill_parent" android:enabled="true" android:clickable="true" android:apiKey="04KLh3UZFDQH7a0NVEnmf0GCUEcmAux6y2atFoA"/></LinearLayout>
           <LinearLayout android:id="@+id/linearLayout1" android:layout_height="fill_parent" android:layout_width="wrap_content" android:gravity="bottom">
           <ImageButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/page" android:id="@+id/btn_list" android:background="@drawable/color_stateful" android:layout_marginLeft="10dip" android:layout_marginBottom="10dip" android:padding="7dip"></ImageButton>
           </LinearLayout>

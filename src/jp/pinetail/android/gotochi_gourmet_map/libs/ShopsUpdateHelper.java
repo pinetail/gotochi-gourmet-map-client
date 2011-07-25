@@ -69,7 +69,7 @@ public class ShopsUpdateHelper {
         HttpConnectionParams.setSoTimeout(params, 3000); //データ取得のタイムアウト  
         String sReturn = "";
         try {
-            HttpGet objGet = new HttpGet(api_url + "system/latest_version.json");
+            HttpGet objGet = new HttpGet(api_url + "system/latest_version" + file_postfix + ".json");
             
             HttpResponse objResponse = objHttp.execute(objGet);
             if (objResponse.getStatusLine().getStatusCode() < 400){
