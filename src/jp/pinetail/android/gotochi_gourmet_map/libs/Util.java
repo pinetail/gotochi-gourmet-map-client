@@ -173,4 +173,19 @@ public class Util {
         return false;
     }
 
+    public static String join(List<String> arr, String separator) {
+        
+        int size = arr.size();
+        String res = "";
+        
+        for (int i = 0; i < size; i++) {
+            res += arr.get(i);
+            
+            if (i + 1 != size) {
+                res += separator;
+            }
+        }
+        return res;
+        
+    }
 }

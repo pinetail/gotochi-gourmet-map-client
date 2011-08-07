@@ -4,7 +4,7 @@
       
     <LinearLayout android:id="@+id/LinearLayout03" android:layout_height="fill_parent" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_gravity="left" android:gravity="left" android:paddingLeft="6dip" android:paddingRight="6dip" android:paddingTop="6dip">
     <LinearLayout android:id="@+id/linearLayout1" android:layout_height="fill_parent" android:layout_width="wrap_content" android:layout_gravity="left">
-        <ImageView android:layout_height="wrap_content" android:layout_width="wrap_content" android:src="@drawable/icon_01" android:id="@+id/img_category"></ImageView>
+        <ImageView android:layout_height="wrap_content" android:layout_width="wrap_content" android:src="@drawable/icon" android:id="@+id/img_category"></ImageView>
     </LinearLayout>
     <LinearLayout android:id="@+id/linearLayout2" android:layout_height="fill_parent" android:layout_width="wrap_content">
         <TextView android:id="@+id/name" android:paddingRight="6dip" android:textColor="@color/screenname_color" android:gravity="center_vertical" android:textSize="13dip" android:layout_height="fill_parent" android:textStyle="bold" android:text="TextView" android:layout_width="wrap_content" android:layout_marginLeft="5dip"></TextView>

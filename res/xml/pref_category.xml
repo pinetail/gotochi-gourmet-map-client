@@ -66,10 +66,26 @@
       android:title="味噌カツ"
       android:defaultValue="true" />
     </PreferenceCategory>
+    <PreferenceCategory android:title="兵庫県" android:key="hyogo">
+    <CheckBoxPreference
+      android:key="hyogo_izushi_soba"
+      android:title="出石そば"
+      android:defaultValue="true" />
+    <CheckBoxPreference
+      android:key="hyogo_sayo_horumon_udon"
+      android:title="佐用ホルモンうどん"
+      android:defaultValue="true" />
+    </PreferenceCategory>
     <PreferenceCategory android:title="香川県" android:key="kagawa">
     <CheckBoxPreference
       android:key="kagawa_sanuki_udon"
       android:title="讃岐うどん"
+      android:defaultValue="true" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="岡山県" android:key="okayama">
+    <CheckBoxPreference
+      android:key="okayama_tsuyama_horumon_udon"
+      android:title="津山ホルモンうどん"
       android:defaultValue="true" />
     </PreferenceCategory>
     <PreferenceCategory android:title="広島県" android:key="hiroshima">

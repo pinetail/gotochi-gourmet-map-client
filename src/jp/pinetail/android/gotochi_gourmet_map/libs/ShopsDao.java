@@ -1,6 +1,5 @@
 package jp.pinetail.android.gotochi_gourmet_map.libs;
 
-import org.apache.commons.lang.StringUtils;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -105,7 +104,7 @@ public class ShopsDao {
         conditions += "(" + (float)left / E6 + " <= longitude and longitude <=" + (float)right / E6 + ") and ";
         
         if (conditions_category.size() > 0 && CATEGORY_KEYS.length != conditions_category.size()) {
-            conditions += "(" + StringUtils.join(conditions_category, " or ") + ") and ";
+            conditions += "(" + Util.join(conditions_category, " or ") + ") and ";
         }
         conditions += "1 = 1";
         Util.logging("i:" + conditions);

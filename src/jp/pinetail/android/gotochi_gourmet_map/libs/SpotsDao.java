@@ -1,6 +1,5 @@
 package jp.pinetail.android.gotochi_gourmet_map.libs;
 
-import org.apache.commons.lang.StringUtils;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -140,10 +139,10 @@ public class SpotsDao {
         conditions += "(" + (float)left / E6 + " <= longitude and longitude <=" + (float)right / E6 + ") and ";
         
         if (conditions_category.size() > 0 && CATEGORY_KEYS.length != conditions_category.size()) {
-            conditions += "(" + StringUtils.join(conditions_category, " or ") + ") and ";
+            conditions += "(" + Util.join(conditions_category, " or ") + ") and ";
         }
         if (conditions_wireless.size() > 0 && WIRELESS_KEYS.length != conditions_wireless.size()) {
-            conditions += "(" + StringUtils.join(conditions_wireless, " or ") + ") and ";
+            conditions += "(" + Util.join(conditions_wireless, " or ") + ") and ";
         }
         
         if (payment == true && pref.getBoolean("settings_search_poweronly", true) == true) {

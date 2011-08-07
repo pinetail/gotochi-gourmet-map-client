@@ -4,7 +4,6 @@
 	<classpathentry kind="src" path="gen"/>
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
 	<classpathentry kind="lib" path="/Users/pain_tail/Downloads/opencsv-2.2/deploy/opencsv-2.2.jar"/>
-	<classpathentry kind="lib" path="/Users/pain_tail/Downloads/commons-lang-2.5/commons-lang-2.5.jar"/>
 	<classpathentry kind="lib" path="libs/adlantis.jar"/>
 	<classpathentry kind="lib" path="libs/libGoogleAnalytics.jar"/>
 	<classpathentry kind="src" path="QuickAction_src"/>
