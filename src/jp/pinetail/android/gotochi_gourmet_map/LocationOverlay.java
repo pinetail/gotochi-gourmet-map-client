@@ -1,11 +1,5 @@
 package jp.pinetail.android.gotochi_gourmet_map;
 
-import java.util.ArrayList;
-
-import com.google.android.maps.GeoPoint;
-import com.google.android.maps.MapView;
-import com.google.android.maps.MyLocationOverlay;
-
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
@@ -14,6 +8,10 @@ import android.location.Location;
 import android.location.LocationProvider;
 import android.os.Bundle;
 import android.widget.Toast;
+
+import com.google.android.maps.GeoPoint;
+import com.google.android.maps.MapView;
+import com.google.android.maps.MyLocationOverlay;
 
 public class LocationOverlay extends MyLocationOverlay {  
       

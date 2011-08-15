@@ -9,23 +9,20 @@ import jp.pinetail.android.gotochi_gourmet_map.libs.ShopsDao;
 import yanzm.products.quickaction.lib.ActionItem;
 import yanzm.products.quickaction.lib.QuickAction;
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.RadioButton;
+import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
-
-import com.google.android.apps.analytics.GoogleAnalyticsTracker;
 
 public class ListActivity extends AbstractGgmapActivity {
     private ArrayList<Shops> list = null;
@@ -40,6 +37,8 @@ public class ListActivity extends AbstractGgmapActivity {
     private int bottom;
     private int left;
     private int right;
+    private int lat = 0;
+    private int lng = 0;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -59,7 +58,14 @@ public class ListActivity extends AbstractGgmapActivity {
             bottom = extras.getInt("bottom");
             left   = extras.getInt("left");
             right  = extras.getInt("right");
-            list = shopsDao.find(pref, top, bottom, left, right, mode);
+            if (extras.containsKey("lat")) {
+                lat = extras.getInt("lat");
+                lng = extras.getInt("lng");
+            } else {
+            	Toast.makeText(this, "現在地を取得できませんでした", Toast.LENGTH_SHORT).show();
+            }
+            list = shopsDao.find(pref, top, bottom, left, right, lat, lng, mode);
+            
         } else {
             list = shopsDao.findAll();
         }
@@ -75,7 +81,7 @@ public class ListActivity extends AbstractGgmapActivity {
                 mode = "score";
                 db = dbHelper.getReadableDatabase();
                 shopsDao = new ShopsDao(db, ListActivity.this);
-                list = shopsDao.find(pref, top, bottom, left, right, mode);
+                list = shopsDao.find(pref, top, bottom, left, right, lat, lng, mode);
                 db.close();
                 init();
                 
@@ -97,7 +103,7 @@ public class ListActivity extends AbstractGgmapActivity {
                 mode = "name";
                 db = dbHelper.getReadableDatabase();
                 shopsDao = new ShopsDao(db, ListActivity.this);
-                list = shopsDao.find(pref, top, bottom, left, right, mode);
+                list = shopsDao.find(pref, top, bottom, left, right, lat, lng, mode);
                 db.close();
                 init();
                 
@@ -135,7 +141,7 @@ public class ListActivity extends AbstractGgmapActivity {
             ListView savedList = (ListView) findViewById(R.id.savedList);
             savedList.setFastScrollEnabled(true);
             adapter = new ShopsAdapter(this, R.layout.list, list);
-            savedList.setAdapter(adapter);  
+            savedList.setAdapter(adapter);
         
             savedList.setOnItemClickListener(new OnItemClickListener() {
      

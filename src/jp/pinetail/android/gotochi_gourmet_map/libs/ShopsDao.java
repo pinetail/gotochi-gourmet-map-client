@@ -11,6 +11,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.location.Location;
 
 public class ShopsDao {
 	
@@ -85,7 +86,7 @@ public class ShopsDao {
         return shops;
     }
 
-    public ArrayList<Shops> find(SharedPreferences pref, int top, int bottom, int left, int right, String sort) {
+    public ArrayList<Shops> find(SharedPreferences pref, int top, int bottom, int left, int right, int lat, int lng, String sort) {
         ArrayList<Shops> shops = new ArrayList<Shops>();
         
         List<String> conditions_category = new ArrayList<String>();
@@ -138,6 +139,13 @@ public class ShopsDao {
             info.Station          = cursor.getString(13);
             info.Memo             = cursor.getString(14);
             
+            if (lat != 0 && lng != 0) {
+                float[] results = {0,0,0};
+                Location.distanceBetween((double) (lat / 1E6), (double) (lng / 1E6), info.Lat, info.Lng, results);
+                info.Distance         = results[0];
+                info.Bearing          = results[1];
+                Util.logging(String.valueOf(results[1]));
+            }
             shops.add(info);
         }
         cursor.close();

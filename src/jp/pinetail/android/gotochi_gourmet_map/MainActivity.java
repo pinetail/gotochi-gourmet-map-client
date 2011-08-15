@@ -29,6 +29,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewStub;
 import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.ImageButton;
@@ -76,6 +77,17 @@ public class MainActivity extends AbstractCoreMapActivity {
         
         gestureDetector = new GestureDetector(MainActivity.this, simpleOnGestureListener);
 
+        ViewStub stub = (ViewStub) findViewById(R.id.mapview_stub);
+        if(Util.isDeguggable(this)){
+        	Util.logging("debug");
+           stub.setLayoutResource(R.layout.map4dev);
+        }else{
+        	Util.logging("release");
+           stub.setLayoutResource(R.layout.map4prod);
+        }
+        View inflated = stub.inflate();
+        mMapView = (MapView)inflated;
+        
         mMapView = (MapView) findViewById(R.id.main_map);
         mMapView.setBuiltInZoomControls(true);
         mMapView.getZoomButtonsController().setOnZoomListener(new OnZoomListener() {
@@ -132,6 +144,12 @@ public class MainActivity extends AbstractCoreMapActivity {
                 intent.putExtra("bottom", bottom);
                 intent.putExtra("left",   left);
                 intent.putExtra("right",  right);
+                
+                GeoPoint point = overlay.getMyLocation();
+                if (point instanceof GeoPoint) {
+	                intent.putExtra("lat", point.getLatitudeE6());
+	                intent.putExtra("lng", point.getLongitudeE6());
+                }
                 startActivityForResult(intent, 2);
             }
         });
@@ -243,8 +261,16 @@ public class MainActivity extends AbstractCoreMapActivity {
             left   = center.getLongitudeE6() - mMapView.getLongitudeSpan()/2;
             right  = center.getLongitudeE6() + mMapView.getLongitudeSpan()/2;
             
+            int lat = 0;
+            int lng = 0;
+            GeoPoint point = overlay.getMyLocation();
+            if (point instanceof GeoPoint) {
+                lat = point.getLatitudeE6();
+                lng = point.getLongitudeE6();
+            }
+
             ShopsDao shopsDao = new ShopsDao(db, MainActivity.this);
-            ArrayList<Shops> shops = shopsDao.find(pref, top, bottom, left, right, "score");
+            ArrayList<Shops> shops = shopsDao.find(pref, top, bottom, left, right, lat, lng, "score");
             Util.logging(String.valueOf(shops.size()));
             if (shops.size() > 0) {
                 int i = 0;

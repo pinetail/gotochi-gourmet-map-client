@@ -20,6 +20,8 @@ public class Shops {
     public String TabelogMobileUrl = null;
     public String Station = null;
     public String Memo = null;
+    public Float Distance = 0.0F;
+    public Float Bearing = 0.0F;
     
     //URL由来のストリーム
     protected InputStream is;

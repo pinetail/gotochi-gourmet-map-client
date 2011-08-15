@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string-array name="list_category_key">
+<!--     <item>hokkaido_sapporo_ramen</item>  -->
+    <item>hokkaido_jingisukan</item>
+    <item>hokkaido_obihiro_butadon</item>
     <item>iwate_wankosoba</item>
     <item>iwate_morioka_reimen</item>
     <item>iwate_morioka_jajamen</item>
@@ -9,20 +12,27 @@
     <item>fukushima_kitakata_ramen</item>
     <item>gunma_mizusawa_udon</item>
     <item>niigata_itarian</item>
+    <item>toyama_black</item>
     <item>shizuoka_oden</item>
     <item>shizuoka_fujinomiya_yakisoba</item>
     <item>aichi_hitsumabushi</item>
     <item>aichi_misokatsu</item>
     <item>hyogo_izushi_soba</item>
     <item>hyogo_sayo_horumon_udon</item>
+    <item>tokushima_ramen</item>
     <item>kagawa_sanuki_udon</item>
+    <item>kochi_suzaki_nabeyaki_ramen</item>
     <item>okayama_tsuyama_horumon_udon</item>
+    <item>okayama_hiruzen_yakisoba</item>
     <item>hiroshima_okonomiyaki</item>
     <item>nagasaki_chanpon</item>
     <item>nagasaki_torukoraisu</item>
     <item>nagasaki_sasebo_burger</item>
   </string-array>
   <string-array name="list_category_name">
+<!--     <item>札幌ラーメン</item>  -->
+    <item>ジンギスカン</item>
+    <item>帯広豚丼</item>
     <item>わんこそば</item>
     <item>盛岡冷麺</item>
     <item>盛岡じゃじゃ麺</item>
@@ -31,14 +41,18 @@
     <item>喜多方ラーメン</item>
     <item>水沢うどん</item>
     <item>イタリアン</item>
+    <item>富山ブラック</item>
     <item>静岡おでん</item>
     <item>富士宮焼きそば</item>
     <item>ひつまぶし</item>
     <item>味噌カツ</item>
     <item>出石そば</item>
     <item>佐用ホルモンうどん</item>
+    <item>徳島ラーメン</item>
     <item>讃岐うどん</item>
+    <item>須崎鍋焼きラーメン</item>
     <item>ホルモンうどん</item>
+    <item>ひるぜん焼きそば</item>
     <item>広島風お好み焼き</item>
     <item>長崎ちゃんぽん</item>
     <item>トルコライス</item>

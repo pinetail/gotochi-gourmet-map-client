@@ -1,27 +1,20 @@
 package jp.pinetail.android.gotochi_gourmet_map.libs;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 import jp.pinetail.android.gotochi_gourmet_map.R;
 import jp.pinetail.android.gotochi_gourmet_map.Shops;
-import jp.pinetail.android.gotochi_gourmet_map.R.drawable;
-import jp.pinetail.android.gotochi_gourmet_map.R.id;
-import jp.pinetail.android.gotochi_gourmet_map.R.layout;
-
 import android.content.Context;
-import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
-import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class ShopsAdapter extends ArrayAdapter {
   
@@ -69,6 +62,8 @@ public class ShopsAdapter extends ArrayAdapter {
 //            holder.Category       = (TextView) convertView.findViewById(R.id.txt_category);
             holder.BusinessHours  = (TextView) convertView.findViewById(R.id.txtBusinessHours);
             holder.Holiday        = (TextView) convertView.findViewById(R.id.txt_holiday);
+            holder.Distance       = (TextView) convertView.findViewById(R.id.txt_distance);
+            holder.layoutDistance = (LinearLayout) convertView.findViewById(R.id.layout_distance);
 //            holder.dist        = (TextView) convertView.findViewById(R.id.distance);
 //            holder.brand       = (ImageView) convertView.findViewById(R.id.icon);
 //            holder.imgFavorite = (ImageView)  convertView.findViewById(R.id.img_favorite);
@@ -107,6 +102,30 @@ public class ShopsAdapter extends ArrayAdapter {
 
             if (holder.Holiday != null) {
                 holder.Holiday.setText(item.Holiday);
+            }
+            
+            if (holder.Distance != null) {
+            	if (item.Distance != 0) {
+                
+                    String dist = "";
+                    
+                    if (item.Distance > 1000) {
+                        BigDecimal bi = new BigDecimal(String.valueOf((double) item.Distance / 1000));
+                        //小数第一位で切り捨て
+                        double k0 = bi.setScale(1, BigDecimal.ROUND_DOWN).doubleValue();
+                        dist = String.valueOf(k0) + "km";
+                    } else {
+                        BigDecimal bi = new BigDecimal(String.valueOf(item.Distance));
+    
+                        //小数第一位で切り捨て
+                        double k0 = bi.setScale(0,BigDecimal.ROUND_DOWN).doubleValue();
+                        dist = String.valueOf(k0) + "m";
+                    }
+    
+                    holder.Distance.setText("現在地から" + getOrientation(item.Bearing) + "へ" + dist);
+                } else {
+                    holder.layoutDistance.setVisibility(View.GONE);
+                }
             }
             
             Float score = Float.parseFloat(item.Score);
@@ -179,79 +198,44 @@ public class ShopsAdapter extends ArrayAdapter {
                 holder.imgStar05.setImageResource(R.drawable.star_empty24);
             }
 
-/*
-            // テキストをビューにセット
-            if (holder.text != null) {
-                holder.text.setText(item.Address);
-            }
-
-            // テキストをビューにセット
-            if (holder.price != null) {
-                if (item.Price.equals("9999")) {
-                    holder.price.setText("no data");
-                } else {
-                    holder.price.setText(item.Price + "円");
-                }
-                holder.price.setTextColor(item.getDispPriceColor());
-            }
-
-            // テキストをビューにセット
-            if (holder.dist != null) {
-                if (item.Distance != null) {
-                    Float distance = Float.parseFloat(item.Distance) / 1000;
-                    holder.dist.setText(distance.toString() + "km");
-                } else {
-                    // 距離が登録されてない（お気に入りGS）の場合、非表示
-                    holder.dist.setVisibility(View.GONE);
-                }
-            }
-        
-            StandsHelper helper = StandsHelper.getInstance();
-            holder.brand.setImageDrawable(context.getResources().getDrawable(helper.getBrandImage(item.Brand, Integer.valueOf(item.Price))));
-            
-            if (favList == null || Arrays.binarySearch(favList, item.ShopCode) < 0) {
-                holder.imgFavorite.setImageDrawable(context.getResources().getDrawable(R.drawable.star_empty24));
-                favStates[position] = 0;
-            } else {
-                holder.imgFavorite.setImageDrawable(context.getResources().getDrawable(R.drawable.star_full24));
-                favStates[position] = 1;
-            }
-            holder.imgFavorite.setOnClickListener(new OnClickListener() {
-                
-                @Override
-                public void onClick(View v) {
-                    
-                    Shops item = (Shops)items.get(position);
-                    
-                    db = dbHelper.getReadableDatabase();
-                    FavoritesDao favoritesDao = new FavoritesDao(db);
-                    
-                    switch (favStates[position]) {
-                    case 0:
-                        // 登録件数の確認
-                        if (favoritesDao.findAll("create_date").size() >= 20) {
-                            Toast.makeText(context, "お気に入りは20件までしか登録出来ません。", Toast.LENGTH_SHORT).show();
-                        } else {
-                            favoritesDao.insert(item);
-                            holder.imgFavorite.setImageDrawable(context.getResources().getDrawable(R.drawable.star_full24));
-                            favStates[position] = 1;
-                        }
-                        break;
-                    case 1:
-                        favoritesDao.deleteByShopCd(item.ShopCode);
-                        holder.imgFavorite.setImageDrawable(context.getResources().getDrawable(R.drawable.star_empty24));
-                        favStates[position] = 0;
-                        break;
-                    }
-                    db.close();
-                    updateFavList();
-                    Utils.logging(favStates[position].toString());
-                }
-            });
-            */
         }
         
         return convertView;
+    }
+    
+    private String getOrientation(float bearing) {
+        
+        String orientation = "";
+        
+        if (-180 < bearing && bearing <= -165) {
+            orientation = "南";
+        } else if (-165 < bearing && bearing <= -105) {
+            orientation = "南西";
+        } else if (-105 < bearing && bearing <= -75) {
+            orientation = "西";
+        } else if (-75 < bearing && bearing <= -15) {
+            orientation = "北西";
+        } else if (-15 < bearing && bearing <= 15) {
+            orientation = "北";
+        } else if (15 < bearing && bearing <= 75) {
+            orientation = "北東";
+        } else if (75 < bearing && bearing <= 105) {
+            orientation = "東";
+        } else if (105 < bearing && bearing <= 165) {
+            orientation = "南東";
+        } else if (165 < bearing && bearing <= 195) {
+            orientation = "南";
+        } else if (195 < bearing && bearing <= 255) {
+            orientation = "南西";
+        } else if (255 < bearing && bearing <= 285) {
+            orientation = "西";
+        } else if (285 < bearing && bearing <= 345) {
+            orientation = "北西";
+        } else if (345 < bearing && bearing <= 360) {
+            orientation = "北";
+        }
+        return orientation;
+        
     }
     
     static class ViewHolder {
@@ -267,7 +251,9 @@ public class ShopsAdapter extends ArrayAdapter {
         TextView Category;
         TextView BusinessHours;
         TextView Holiday;
+        TextView Distance;
         ImageView brand;
         ImageView imgFavorite;
+        LinearLayout layoutDistance;
     }
 }
