@@ -12,6 +12,7 @@ import jp.pinetail.android.gotochi_gourmet_map.libs.Util;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -20,6 +21,7 @@ import android.content.SharedPreferences.Editor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
@@ -63,6 +65,7 @@ public class MainActivity extends AbstractCoreMapActivity {
     private int right;
     private CategoryImage categoryImage;
     private Handler mHandler = new Handler();
+    public static final String TABELOG_SMARTPHONE_URL = "http://s.tabelog.com/";
 
     /** Called when the activity is first created. */
     @Override
@@ -250,8 +253,8 @@ public class MainActivity extends AbstractCoreMapActivity {
     synchronized private final ArrayList<PinItemizedOverlay> process() {
         ArrayList<PinItemizedOverlay> pins = new ArrayList<PinItemizedOverlay>();;
 
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
         try {
-            db = dbHelper.getReadableDatabase();
             SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
             PinItemizedOverlay pinOverlay = null;
             
@@ -300,13 +303,15 @@ public class MainActivity extends AbstractCoreMapActivity {
         super.onCreateOptionsMenu( menu );
         // メニューアイテムを追加
         MenuItem item0 = menu.add( 0, 0, 0, "現在地" );
-        MenuItem item1 = menu.add( 0, 1, 0, "設定" );
-        MenuItem item2 = menu.add( 0, 2, 0, "更新チェック" );
+        MenuItem item1 = menu.add( 0, 1, 2, "設定" );
+        MenuItem item2 = menu.add( 0, 2, 3, "更新チェック" );
+        MenuItem item3 = menu.add( 0, 3, 1, "店舗登録" );
 
         // 追加したメニューアイテムのアイコンを設定
         item0.setIcon( android.R.drawable.ic_menu_mylocation);
         item1.setIcon( android.R.drawable.ic_menu_preferences );
         item2.setIcon( android.R.drawable.ic_menu_rotate );
+        item3.setIcon( android.R.drawable.ic_menu_edit);
         return true;
     }
     
@@ -335,7 +340,33 @@ public class MainActivity extends AbstractCoreMapActivity {
             startActivityForResult(intent, 1);
             return true;
         case 2:
-            checkUpdate(); 
+            checkUpdate();
+            break;
+        case 3:
+        	
+        	LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+            new AlertDialog.Builder(this)
+            .setView(inflater.inflate(R.layout.post_description, null))
+            .setPositiveButton("登録する", new DialogInterface.OnClickListener() {
+
+                public void onClick(DialogInterface dialog, int which) {
+	                Intent intent = new Intent(); 
+	                intent.setAction(Intent.ACTION_VIEW); 
+	                intent.setData(Uri.parse(TABELOG_SMARTPHONE_URL)); 
+	                startActivity(intent);
+                }
+                
+            })
+            .setNegativeButton("キャンセル", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+                     dialog.cancel();
+                }
+             })
+            .create()
+            .show();
+            return true;
+
         }  
         return false;
     }

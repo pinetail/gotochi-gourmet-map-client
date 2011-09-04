@@ -66,22 +66,6 @@ public class DetailActivity extends AbstractGgmapActivity implements Runnable {
     }
     
     @Override
-    public boolean onCreateOptionsMenu( Menu menu ) {
-        super.onCreateOptionsMenu( menu );
-        // メニューアイテムを追加
-//        MenuItem item0 = menu.add( 0, 0, 0, "ブラウザ" );
-        MenuItem item1 = menu.add( 0, 1, 0, "共有" );
-        MenuItem item2 = menu.add( 0, 2, 0, "設定" );
-
-        // 追加したメニューアイテムのアイコンを設定
-//        item0.setIcon( android.R.drawable.ic_menu_view);
-        item1.setIcon( android.R.drawable.ic_menu_share);
-        item2.setIcon( android.R.drawable.ic_menu_preferences);
-        
-        return true;
-    }
-    
-    @Override
     public boolean onOptionsItemSelected(MenuItem item){
         return false;
     }
@@ -118,7 +102,7 @@ public class DetailActivity extends AbstractGgmapActivity implements Runnable {
 	                
 	                Intent intent = new Intent(); 
 	                intent.setAction(Intent.ACTION_VIEW); 
-	                intent.setData(Uri.parse(info.TabelogUrl)); 
+	                intent.setData(Uri.parse(info.getTabelogUrl())); 
 	                startActivity(intent);
 	            }
 	            

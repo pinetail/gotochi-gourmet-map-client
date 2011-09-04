@@ -16,12 +16,15 @@ public class Shops {
     public Double Lat = null;
     public Double Lng = null;
     public String Score = null;
-    public String TabelogUrl = null;
-    public String TabelogMobileUrl = null;
+    private String TabelogUrl = null;
+	public String TabelogMobileUrl = null;
     public String Station = null;
     public String Memo = null;
     public Float Distance = 0.0F;
     public Float Bearing = 0.0F;
+    
+    public static final String TABELOG_PC_DOMAIN     = "http://r.tabelog.com/";
+    public static final String TABELOG_MOBILE_DOMAIN = "http://m.tabelog.com/";
     
     //URL由来のストリーム
     protected InputStream is;
@@ -47,5 +50,23 @@ public class Shops {
     public void setData(String key, String value) {
     }
     
+    public String getTabelogUrl() {
+        return TABELOG_PC_DOMAIN + TabelogUrl;
+    }
+
+    public void setTabelogUrl(String tabelogUrl) {
+        
+        TabelogUrl = tabelogUrl.replace(TABELOG_PC_DOMAIN, "");
+    }
+
+    public String getTabelogMobileUrl() {
+        return TABELOG_MOBILE_DOMAIN + TabelogMobileUrl;
+    }
+
+    public void setTabelogMobileUrl(String tabelogMobileUrl) {
+        TabelogMobileUrl = tabelogMobileUrl;
+    }
+
+
 }
 

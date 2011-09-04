@@ -272,5 +272,4 @@ public class XmlParserFromUrl {
 
         return map;
     }
-    
 }

@@ -7,6 +7,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 
+import jp.pinetail.android.gotochi_gourmet_map.Shops;
+
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -95,7 +97,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 stmt.bindString(8, nextLine[7].trim()); // latitude
                 stmt.bindString(9, nextLine[8].trim()); // longitude
                 stmt.bindString(10, nextLine[9].trim()); // score
-                stmt.bindString(11, nextLine[10].trim()); // tabelog_url
+                stmt.bindString(11, nextLine[10].trim().replace(Shops.TABELOG_PC_DOMAIN, "")); // tabelog_url
                 stmt.bindString(12, ""); // tabelog_mobile_url
                 stmt.bindString(13, nextLine[12].trim()); // station
                 stmt.bindString(14, nextLine[13].trim()); // memo

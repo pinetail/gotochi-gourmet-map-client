@@ -1,149 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  android:title="カテゴリ" android:key="category">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="カテゴリ" android:key="category">
     <PreferenceCategory android:title="北海道" android:key="hokkaido">
-    <!-- 
-    <CheckBoxPreference
-      android:key="hokkaido_sapporo_ramen"
-      android:title="札幌ラーメン"
-      android:defaultValue="true" />
-     -->
-    <CheckBoxPreference
-      android:key="hokkaido_jingisukan"
-      android:title="ジンギスカン"
-      android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="hokkaido_obihiro_butadon"
-      android:title="帯広豚丼"
-      android:defaultValue="true" />
+        <!--
+            <CheckBoxPreference android:key="hokkaido_sapporo_ramen"
+            android:title="札幌ラーメン" android:defaultValue="true" />
+        -->
+        <CheckBoxPreference android:key="hokkaido_jingisukan"
+            android:title="ジンギスカン" android:defaultValue="true" />
+        <CheckBoxPreference android:key="hokkaido_obihiro_butadon"
+            android:title="帯広豚丼" android:defaultValue="true" />
     </PreferenceCategory>
+    <PreferenceCategory android:title="青森県" android:key="aomori">
+        <CheckBoxPreference android:key="aomori_towada_barayaki"
+            android:title="十和田バラ焼き" android:defaultValue="true" />
+        <CheckBoxPreference android:key="aomori_kuroishi_yakisoba"
+            android:title="黒石やきそば" android:defaultValue="true" />
+        <CheckBoxPreference android:key="aomori_kuroishi_tsuyuyakisoba"
+            android:title="黒石つゆやきそば" android:defaultValue="true" />
+    </PreferenceCategory>
+
     <PreferenceCategory android:title="岩手県" android:key="iwate">
-    <CheckBoxPreference
-      android:key="iwate_wankosoba"
-      android:title="わんこそば"
-      android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="iwate_morioka_reimen"
-      android:title="盛岡冷麺"
-      android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="iwate_morioka_jajamen"
-      android:title="盛岡じゃじゃ麺"
-      android:defaultValue="true" />
+        <CheckBoxPreference android:key="iwate_wankosoba"
+            android:title="わんこそば" android:defaultValue="true" />
+        <CheckBoxPreference android:key="iwate_morioka_reimen"
+            android:title="盛岡冷麺" android:defaultValue="true" />
+        <CheckBoxPreference android:key="iwate_morioka_jajamen"
+            android:title="盛岡じゃじゃ麺" android:defaultValue="true" />
     </PreferenceCategory>
     <PreferenceCategory android:title="宮城県" android:key="miyagi">
-    <CheckBoxPreference
-      android:key="miyagi_gyutan"
-      android:title="牛タン"
-      android:defaultValue="true" />
+        <CheckBoxPreference android:key="miyagi_gyutan"
+            android:title="牛タン" android:defaultValue="true" />
     </PreferenceCategory>
     <PreferenceCategory android:title="秋田県" android:key="akita">
-    <CheckBoxPreference
-      android:key="akita_yokote_yakisoba"
-      android:title="横手やきそば"
-      android:defaultValue="true" />
+        <CheckBoxPreference android:key="akita_yokote_yakisoba"
+            android:title="横手やきそば" android:defaultValue="true" />
     </PreferenceCategory>
     <PreferenceCategory android:title="福島県" android:key="fukushima">
-    <CheckBoxPreference
-      android:key="fukushima_kitakata_ramen"
-      android:title="喜多方ラーメン"
-      android:defaultValue="true" />
+        <CheckBoxPreference android:key="fukushima_kitakata_ramen"
+            android:title="喜多方ラーメン" android:defaultValue="true" />
+        <CheckBoxPreference android:key="fukushima_sauce_katsudon"
+            android:title="ソースカツ丼" android:defaultValue="true" />
     </PreferenceCategory>
     <PreferenceCategory android:title="群馬県" android:key="gunma">
-    <CheckBoxPreference
-      android:key="gunma_mizusawa_udon"
-      android:title="水沢うどん"
-      android:defaultValue="true" />
+        <CheckBoxPreference android:key="gunma_mizusawa_udon"
+            android:title="水沢うどん" android:defaultValue="true" />
     </PreferenceCategory>
     <PreferenceCategory android:title="新潟県" android:key="niigata">
-    <CheckBoxPreference
-      android:key="niigata_itarian"
-      android:title="イタリアン"
-      android:defaultValue="true" />
+        <CheckBoxPreference android:key="niigata_itarian"
+            android:title="イタリアン" android:defaultValue="true" />
     </PreferenceCategory>
     <PreferenceCategory android:title="富山県" android:key="toyama">
-    <CheckBoxPreference
-      android:key="toyama_black"
-      android:title="富山ブラック"
-      android:defaultValue="true" />
+        <CheckBoxPreference android:key="toyama_black"
+            android:title="富山ブラック" android:defaultValue="true" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="福井県" android:key="fukui">
+        <CheckBoxPreference android:key="fukui_sauce_katsudon"
+            android:title="ソースカツ丼" android:defaultValue="true" />
+        <CheckBoxPreference android:key="fukui_oroshi_soba"
+            android:title="おろしそば" android:defaultValue="true" />
     </PreferenceCategory>
     <PreferenceCategory android:title="静岡県" android:key="shizuoka">
-    <CheckBoxPreference
-      android:key="shizuoka_oden"
-      android:title="静岡おでん"
-      android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="shizuoka_fujinomiya_yakisoba"
-      android:title="富士宮やきそば"
-      android:defaultValue="true" />
+        <CheckBoxPreference android:key="shizuoka_oden"
+            android:title="静岡おでん" android:defaultValue="true" />
+        <CheckBoxPreference android:key="shizuoka_fujinomiya_yakisoba"
+            android:title="富士宮やきそば" android:defaultValue="true" />
     </PreferenceCategory>
     <PreferenceCategory android:title="愛知県" android:key="aichi">
-    <CheckBoxPreference
-      android:key="aichi_hitsumabushi"
-      android:title="ひつまぶし"
-      android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="aichi_misokatsu"
-      android:title="味噌カツ"
-      android:defaultValue="true" />
+        <CheckBoxPreference android:key="aichi_hitsumabushi"
+            android:title="ひつまぶし" android:defaultValue="true" />
+        <CheckBoxPreference android:key="aichi_misokatsu"
+            android:title="味噌カツ" android:defaultValue="true" />
     </PreferenceCategory>
     <PreferenceCategory android:title="兵庫県" android:key="hyogo">
-    <CheckBoxPreference
-      android:key="hyogo_izushi_soba"
-      android:title="出石そば"
-      android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="hyogo_sayo_horumon_udon"
-      android:title="佐用ホルモンうどん"
-      android:defaultValue="true" />
+        <CheckBoxPreference android:key="hyogo_izushi_soba"
+            android:title="出石そば" android:defaultValue="true" />
+        <CheckBoxPreference android:key="hyogo_sayo_horumon_udon"
+            android:title="佐用ホルモンうどん" android:defaultValue="true" />
     </PreferenceCategory>
     <PreferenceCategory android:title="徳島県" android:key="tokushima">
-    <CheckBoxPreference
-      android:key="tokushima_ramen"
-      android:title="徳島ラーメン"
-      android:defaultValue="true" />
+        <CheckBoxPreference android:key="tokushima_ramen"
+            android:title="徳島ラーメン" android:defaultValue="true" />
     </PreferenceCategory>
     <PreferenceCategory android:title="香川県" android:key="kagawa">
-    <CheckBoxPreference
-      android:key="kagawa_sanuki_udon"
-      android:title="讃岐うどん"
-      android:defaultValue="true" />
+        <CheckBoxPreference android:key="kagawa_sanuki_udon"
+            android:title="讃岐うどん" android:defaultValue="true" />
     </PreferenceCategory>
     <PreferenceCategory android:title="高知県" android:key="kochi">
-    <CheckBoxPreference
-      android:key="kochi_suzaki_nabeyaki_ramen"
-      android:title="須崎鍋焼きラーメン"
-      android:defaultValue="true" />
+        <CheckBoxPreference android:key="kochi_suzaki_nabeyaki_ramen"
+            android:title="須崎鍋焼きラーメン" android:defaultValue="true" />
     </PreferenceCategory>
     <PreferenceCategory android:title="岡山県" android:key="okayama">
-    <CheckBoxPreference
-      android:key="okayama_tsuyama_horumon_udon"
-      android:title="津山ホルモンうどん"
-      android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="okayama_hiruzen_yakisoba"
-      android:title="ひるぜん焼きそば"
-      android:defaultValue="true" />
+        <CheckBoxPreference android:key="okayama_tsuyama_horumon_udon"
+            android:title="津山ホルモンうどん" android:defaultValue="true" />
+        <CheckBoxPreference android:key="okayama_hiruzen_yakisoba"
+            android:title="ひるぜん焼きそば" android:defaultValue="true" />
+        <CheckBoxPreference android:key="okayama_demikatsudon"
+            android:title="デミカツ丼" android:defaultValue="true" />
     </PreferenceCategory>
     <PreferenceCategory android:title="広島県" android:key="hiroshima">
-    <CheckBoxPreference
-      android:key="hiroshima_okonomiyaki"
-      android:title="広島風お好み焼き"
-      android:defaultValue="true" />
+        <CheckBoxPreference android:key="hiroshima_okonomiyaki"
+            android:title="広島風お好み焼き" android:defaultValue="true" />
     </PreferenceCategory>
     <PreferenceCategory android:title="長崎県" android:key="nagasaki">
-    <CheckBoxPreference
-      android:key="nagasaki_chanpon"
-      android:title="長崎ちゃんぽん"
-      android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="nagasaki_torukoraisu"
-      android:title="トルコライス"
-      android:defaultValue="true" />
-    <CheckBoxPreference
-      android:key="nagasaki_sasebo_burger"
-      android:title="佐世保バーガー"
-      android:defaultValue="true" />
+        <CheckBoxPreference android:key="nagasaki_chanpon"
+            android:title="長崎ちゃんぽん" android:defaultValue="true" />
+        <CheckBoxPreference android:key="nagasaki_torukoraisu"
+            android:title="トルコライス" android:defaultValue="true" />
+        <CheckBoxPreference android:key="nagasaki_sasebo_burger"
+            android:title="佐世保バーガー" android:defaultValue="true" />
     </PreferenceCategory>
 </PreferenceScreen>

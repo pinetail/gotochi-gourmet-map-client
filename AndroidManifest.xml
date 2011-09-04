@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
       package="jp.pinetail.android.gotochi_gourmet_map"
       android:installLocation="preferExternal"
-      android:versionCode="5"
-      android:versionName="1.4.0"
+      android:versionCode="8"
+      android:versionName="1.7.0"
 >
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -51,7 +51,17 @@
               android:label="カテゴリ" />
         <activity android:name=".SettingsWirelessActivity"
               android:label="無線LAN" />
-
+        <activity android:name=".PostActivity"
+                  android:label="ご当地ぐるめ！に登録"
+                  android:screenOrientation="portrait"
+                  android:theme="@android:style/Theme.Black.NoTitleBar"
+                  android:configChanges="orientation|keyboardHidden">
+            <intent-filter>
+                  <category android:name="android.intent.category.DEFAULT" /> 
+                  <data android:mimeType="text/plain" />
+                  <action android:name="android.intent.action.SEND" />
+            </intent-filter>
+        </activity>
     </application>
     <uses-sdk android:minSdkVersion="4" />
     <uses-sdk android:targetSdkVersion="7" />

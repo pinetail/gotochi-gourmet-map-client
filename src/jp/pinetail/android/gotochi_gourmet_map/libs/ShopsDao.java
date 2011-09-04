@@ -74,7 +74,7 @@ public class ShopsDao {
             info.Lat              = Double.valueOf(cursor.getString(8));
             info.Lng              = Double.valueOf(cursor.getString(9));
             info.Score            = cursor.getString(10);
-            info.TabelogUrl       = cursor.getString(11);
+            info.setTabelogUrl(cursor.getString(11));
             info.TabelogMobileUrl = cursor.getString(12);
             info.Station          = cursor.getString(13);
             info.Memo             = cursor.getString(14);
@@ -96,7 +96,7 @@ public class ShopsDao {
             String data = category_map.get( key );
             
             if (pref.getBoolean(key, true) == true) {
-                conditions_category.add("category = '" + data + "'");
+                conditions_category.add("category like '%" + data + "%'");
             }
         }
 
@@ -134,7 +134,7 @@ public class ShopsDao {
             info.Lat              = Double.valueOf(cursor.getString(8));
             info.Lng              = Double.valueOf(cursor.getString(9));
             info.Score            = cursor.getString(10);
-            info.TabelogUrl       = cursor.getString(11);
+            info.setTabelogUrl(cursor.getString(11));
             info.TabelogMobileUrl = cursor.getString(12);
             info.Station          = cursor.getString(13);
             info.Memo             = cursor.getString(14);
@@ -179,7 +179,7 @@ public class ShopsDao {
             info.Lat              = Double.valueOf(cursor.getString(8));
             info.Lng              = Double.valueOf(cursor.getString(9));
             info.Score            = cursor.getString(10);
-            info.TabelogUrl       = cursor.getString(11);
+            info.setTabelogUrl(cursor.getString(11));
             info.TabelogMobileUrl = cursor.getString(12);
             info.Station          = cursor.getString(13);
             info.Memo             = cursor.getString(14);
@@ -189,5 +189,5 @@ public class ShopsDao {
         
         return shop;
     }
-
+    
 }

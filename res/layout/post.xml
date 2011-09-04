@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/RelativeLayoutDetail"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_height="fill_parent"
+  android:orientation="vertical"
+  android:layout_width="fill_parent" android:background="@drawable/tile_bg">
+    <LinearLayout
+    android:id="@+id/LinearLayout11"
+    android:layout_height="wrap_content"
+    android:layout_width="fill_parent"
+    android:layout_alignParentTop="true" android:background="@drawable/button_bar">
+    <LinearLayout
+      android:id="@+id/LinearLayout04"
+      android:layout_weight="1" android:layout_height="fill_parent" android:gravity="center_vertical" android:layout_width="fill_parent">
+<LinearLayout android:id="@+id/LinearLayout18" android:layout_width="wrap_content" android:layout_height="fill_parent" android:gravity="left|center_vertical" android:layout_weight="1">
+    <Button android:layout_marginLeft="10dip" android:textColor="@color/white" android:text="戻る" android:id="@+id/btn_back" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/btn_back_states"></Button>
+</LinearLayout>
+<LinearLayout android:id="@+id/LinearLayout19" android:layout_width="wrap_content" android:layout_height="fill_parent" android:gravity="right|center_vertical" android:layout_weight="1">
+    <Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:background="@drawable/btn_back_states" android:textColor="@color/white" android:layout_marginRight="10dip" android:text="投稿" android:id="@+id/btn_post"></Button>
+
+</LinearLayout>
+</LinearLayout>
+  </LinearLayout>
+<ScrollView
+    android:id="@+id/ScrollView01"
+    android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_below="@+id/LinearLayout11" android:layout_above="@+id/LinearLayout02">
+<LinearLayout
+  android:layout_height="wrap_content" android:orientation="vertical" android:layout_width="fill_parent" android:padding="10dip">
+<LinearLayout android:id="@+id/LinearLayout08" android:layout_height="wrap_content" android:orientation="vertical" android:layout_width="fill_parent" android:background="@drawable/border" android:layout_marginTop="10dip" android:paddingBottom="10dip" android:paddingTop="10dip" android:paddingLeft="15dip" android:paddingRight="15dip">
+    <LinearLayout android:layout_height="wrap_content" android:paddingBottom="5dip" android:id="@+id/LinearLayout15" android:paddingTop="5dip" android:layout_width="fill_parent">
+        <TableLayout android:id="@+id/tableLayout1" android:layout_height="match_parent" android:layout_width="wrap_content" android:gravity="center_vertical" android:stretchColumns="1">
+            <TableRow android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/TableRow03">
+                <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="店名" android:textColor="@color/text_color" android:id="@+id/TextView07"></TextView>
+                <EditText android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/edit_name" android:layout_weight="1" android:scrollHorizontally="true" android:enabled="false" android:focusable="false">
+                    <requestFocus></requestFocus>
+                </EditText>
+            </TableRow>
+            <TableRow android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/tableRow2">
+                <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="URL" android:textColor="@color/text_color" android:id="@+id/TextView04"></TextView>
+                <EditText android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_weight="1" android:inputType="textUri" android:scrollHorizontally="true" android:id="@+id/edit_tabelog_url" android:enabled="false" android:focusable="false"></EditText>
+            </TableRow>
+            <TableRow android:gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/TableRow01">
+                <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:textColor="@color/text_color" android:id="@+id/TextView03" android:text="ジャンル"></TextView>
+                <Spinner android:layout_height="wrap_content" android:layout_width="wrap_content" android:entries="@array/list_category_name" android:id="@+id/spin_category" android:layout_weight="1"></Spinner>
+            </TableRow>
+            <TableRow android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/TableRow04">
+                <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:textColor="@color/text_color" android:id="@+id/TextView06"></TextView>
+                <EditText android:layout_height="wrap_content" android:layout_width="wrap_content" android:scrollHorizontally="true" android:layout_weight="1" android:id="@+id/edit_etc_category_name" android:hint="ジャンルを入力してください"></EditText>
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+</LinearLayout>
+    
+
+    
+
+  </LinearLayout>
+</ScrollView>
+</RelativeLayout>

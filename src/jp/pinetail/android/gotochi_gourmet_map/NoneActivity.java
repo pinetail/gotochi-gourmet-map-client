@@ -63,7 +63,7 @@ public class NoneActivity extends AbstractGgmapActivity {
                     
                     Intent intent = new Intent(); 
                     intent.setAction(Intent.ACTION_VIEW); 
-                    intent.setData(Uri.parse(info.TabelogUrl)); 
+                    intent.setData(Uri.parse(info.getTabelogUrl())); 
                     startActivity(intent);
                 }
             }

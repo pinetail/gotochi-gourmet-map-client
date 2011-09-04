@@ -19,7 +19,7 @@ import com.google.android.apps.analytics.GoogleAnalyticsTracker;
 public abstract class AbstractGgmapActivity extends Activity {
 
     protected AlertDialog alertDialog = null;
-    private Handler mHandler = new Handler();
+    protected Handler mHandler = new Handler();
     protected static final Integer pressed_color = Color.argb(80, 255, 255, 255);
     public GoogleAnalyticsTracker tracker;
 

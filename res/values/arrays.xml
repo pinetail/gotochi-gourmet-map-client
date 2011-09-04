@@ -4,6 +4,9 @@
 <!--     <item>hokkaido_sapporo_ramen</item>  -->
     <item>hokkaido_jingisukan</item>
     <item>hokkaido_obihiro_butadon</item>
+    <item>aomori_towada_barayaki</item>
+    <item>aomori_kuroishi_yakisoba</item>
+    <item>aomori_kuroishi_tsuyuyakisoba</item>
     <item>iwate_wankosoba</item>
     <item>iwate_morioka_reimen</item>
     <item>iwate_morioka_jajamen</item>
@@ -24,15 +27,22 @@
     <item>kochi_suzaki_nabeyaki_ramen</item>
     <item>okayama_tsuyama_horumon_udon</item>
     <item>okayama_hiruzen_yakisoba</item>
+    <item>okayama_demikatsudon</item>
     <item>hiroshima_okonomiyaki</item>
     <item>nagasaki_chanpon</item>
     <item>nagasaki_torukoraisu</item>
     <item>nagasaki_sasebo_burger</item>
+    <item>fukui_sauce_katsudon</item>
+    <item>fukui_oroshi_soba</item>
+    <item>fukushima_sauce_katsudon</item>
   </string-array>
   <string-array name="list_category_name">
 <!--     <item>札幌ラーメン</item>  -->
     <item>ジンギスカン</item>
     <item>帯広豚丼</item>
+    <item>バラ焼き</item>
+    <item>黒石やきそば</item>
+    <item>黒石つゆやきそば</item>
     <item>わんこそば</item>
     <item>盛岡冷麺</item>
     <item>盛岡じゃじゃ麺</item>
@@ -50,13 +60,17 @@
     <item>佐用ホルモンうどん</item>
     <item>徳島ラーメン</item>
     <item>讃岐うどん</item>
-    <item>須崎鍋焼きラーメン</item>
+    <item>鍋焼きラーメン</item>
     <item>ホルモンうどん</item>
     <item>ひるぜん焼きそば</item>
+    <item>デミカツ丼</item>
     <item>広島風お好み焼き</item>
     <item>長崎ちゃんぽん</item>
     <item>トルコライス</item>
     <item>佐世保バーガー</item>
+    <item>福井ソースカツ丼</item>
+    <item>おろしそば</item>
+    <item>会津ソースカツ丼</item>
   </string-array>
   
   
