@@ -7,7 +7,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import jp.pinetail.android.gotochi_gourmet_map.core.AbstractGgmapActivity;
-import jp.pinetail.android.gotochi_gourmet_map.libs.Categories;
+import jp.pinetail.android.gotochi_gourmet_map.dto.CategoriesDto;
 import jp.pinetail.android.gotochi_gourmet_map.libs.Util;
 import jp.pinetail.android.gotochi_gourmet_map.libs.WebApi;
 import jp.pinetail.android.gotochi_gourmet_map.libs.XmlParserFromUrl;
@@ -44,7 +44,8 @@ public class PostActivity extends AbstractGgmapActivity {
     private EditText editTabelogUrl;
     private Spinner spinCategory;
     private EditText editEtcCategory;
-    public static final String TABELOG_URL_PATTERN = "http://s\\.tabelog\\.com/smartphone/restaurant_detail/top/\\?rcd=([0-9]+)(.*)";
+    public static final String TABELOG_URL = "http://s\\.tabelog\\.com/(.*)";
+    public static final String TABELOG_URL_PATTERN = "http://s\\.tabelog\\.com/[0-9a-zA-Z]+/[0-9a-zA-Z]+/[0-9a-zA-Z]+/([0-9]+)(.*)";
     public static final String CATEGORY_URL = "http://ggmap.pinetail.jp/api/get_categories.json";
 
     @Override
@@ -61,7 +62,7 @@ public class PostActivity extends AbstractGgmapActivity {
             Bundle extras = getIntent().getExtras();
             
             if (extras.containsKey(Intent.EXTRA_TEXT)) {
-                if (extras.getString(Intent.EXTRA_TEXT).matches(TABELOG_URL_PATTERN) == true) {
+                if (extras.getString(Intent.EXTRA_TEXT).matches(TABELOG_URL) == true) {
                     editName.setText(extras.getString(Intent.EXTRA_SUBJECT).replace("[食べログ]", ""));
                     editTabelogUrl.setText(extras.getString(Intent.EXTRA_TEXT));
                 } else {
@@ -92,8 +93,8 @@ public class PostActivity extends AbstractGgmapActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         adapter.add("");
         
-        ArrayList<Categories> categories = WebApi.getCategories(CATEGORY_URL);
-        for (Categories category : categories) {
+        ArrayList<CategoriesDto> categories = WebApi.getCategories(CATEGORY_URL);
+        for (CategoriesDto category : categories) {
             adapter.add("[" + category.prefecture + "] " + category.name);
         }
         adapter.add("その他");
@@ -297,8 +298,6 @@ public class PostActivity extends AbstractGgmapActivity {
 
         Util.logging(url);
         
-        XmlParserFromUrl xml = new XmlParserFromUrl();
-
         for (int i = 0; i< 3;i++) {
             
             byte[] byteArray = Util.getByteArrayFromURL(url, "POST");

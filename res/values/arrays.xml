@@ -35,6 +35,8 @@
     <item>fukui_sauce_katsudon</item>
     <item>fukui_oroshi_soba</item>
     <item>fukushima_sauce_katsudon</item>
+    <item>ishikawa_hanton_rice</item>
+    <item>ooita_beppureimen</item>
   </string-array>
   <string-array name="list_category_name">
 <!--     <item>札幌ラーメン</item>  -->
@@ -71,6 +73,8 @@
     <item>福井ソースカツ丼</item>
     <item>おろしそば</item>
     <item>会津ソースカツ丼</item>
+    <item>ハントンライス</item>
+    <item>別府冷麺</item>
   </string-array>
   
   

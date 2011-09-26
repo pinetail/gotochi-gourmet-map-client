@@ -6,13 +6,14 @@ import java.util.Random;
 
 
 import jp.pinetail.android.gotochi_gourmet_map.core.AbstractGgmapActivity;
-import jp.pinetail.android.gotochi_gourmet_map.libs.Comments;
+import jp.pinetail.android.gotochi_gourmet_map.dao.ShopsDao;
+import jp.pinetail.android.gotochi_gourmet_map.dto.CommentsDto;
+import jp.pinetail.android.gotochi_gourmet_map.dto.ShopsDto;
 import jp.pinetail.android.gotochi_gourmet_map.libs.CommentsAdapter;
 import jp.pinetail.android.gotochi_gourmet_map.libs.DatabaseHelper;
 import jp.pinetail.android.gotochi_gourmet_map.libs.ShopImages;
 import jp.pinetail.android.gotochi_gourmet_map.libs.ShopsAdapter;
 import jp.pinetail.android.gotochi_gourmet_map.libs.ShopsController;
-import jp.pinetail.android.gotochi_gourmet_map.libs.ShopsDao;
 import jp.pinetail.android.gotochi_gourmet_map.libs.Util;
 import jp.pinetail.android.gotochi_gourmet_map.libs.XmlParserFromUrl;
 import jp.pinetail.android.gotochi_gourmet_map.libs.ShopsController.ImageAdapter;
@@ -54,14 +55,14 @@ public class CommentsActivity extends AbstractGgmapActivity implements OnScrollL
     private DatabaseHelper dbHelper = null;
     private SQLiteDatabase db = null;
     private ShopsDao shopsDao = null;
-    private Shops info = null;
+    private ShopsDto info = null;
     private final Handler mHandler = new Handler();
     private View mFooter = null;
     private ListView mListView;
     private static String tabelogAccessKey = null;
     private  int maxCount = 1;
     private int mCount = 1;
-    private static ArrayList<Comments> items;
+    private static ArrayList<CommentsDto> items;
     private ProgressDialog dialog;
 
     @Override
@@ -143,7 +144,7 @@ public class CommentsActivity extends AbstractGgmapActivity implements OnScrollL
                                 		progress.setVisibility(View.VISIBLE);
                                 		additionalReading();
                                 	} else {
-                                		final Comments item = items.get(position);
+                                		final CommentsDto item = items.get(position);
                                 		
                                         // イベントトラック（ブラウザ）
                                         tracker.trackEvent(

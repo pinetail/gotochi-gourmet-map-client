@@ -3,6 +3,7 @@ package jp.pinetail.android.gotochi_gourmet_map.libs;
 import java.util.ArrayList;
 
 import jp.pinetail.android.gotochi_gourmet_map.R;
+import jp.pinetail.android.gotochi_gourmet_map.dto.CommentsDto;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Typeface;
@@ -14,17 +15,17 @@ import android.widget.TextView;
 
 public class CommentsAdapter extends ArrayAdapter {
   
-    private ArrayList<Comments> items;
+    private ArrayList<CommentsDto> items;
     private LayoutInflater inflater;
     private Context context;
-    private Comments item;
+    private CommentsDto item;
     private String[] favList;
     private DatabaseHelper dbHelper = null;
     private SQLiteDatabase db = null;
     private Integer[] favStates;
 
     
-    public CommentsAdapter(Context context, int textViewResourceId, ArrayList<Comments> items) {
+    public CommentsAdapter(Context context, int textViewResourceId, ArrayList<CommentsDto> items) {
         super(context, textViewResourceId, items);
         this.items = items;
         this.context = context;
@@ -61,7 +62,7 @@ public class CommentsAdapter extends ArrayAdapter {
         }
 
         // 表示すべきデータの取得
-        item = (Comments)items.get(position);
+        item = (CommentsDto)items.get(position);
       
         if (item != null) {
 

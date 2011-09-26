@@ -7,7 +7,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 
-import jp.pinetail.android.gotochi_gourmet_map.Shops;
+import jp.pinetail.android.gotochi_gourmet_map.dto.ShopsDto;
 
 
 import android.app.ProgressDialog;
@@ -23,7 +23,7 @@ import au.com.bytecode.opencsv.CSVReader;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "gotochi_gourmet_map";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
     private Context mContext;
     private static boolean import_status = true;
     
@@ -46,6 +46,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     
     private static final String DROP_SHOPS_TABLE_SQL = "drop table if exists shops";
 
+    private static final String CREATE_FAVORITES_TABLE_SQL = "create table if not exists favorites " +
+            "(rowid integer primary key autoincrement, " +
+            "tabelog_id integer not null," +
+            "memo text null," +
+            "updated_at text not null," +
+            "created_at text not null)";
+
+    private static final String DROP_FAVORITES_TABLE_SQL = "drop table if exists favorites";
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -55,7 +63,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_SHOPS_TABLE_SQL);
-        
+        db.execSQL(CREATE_FAVORITES_TABLE_SQL);
     }
     
     @Override
@@ -97,7 +105,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 stmt.bindString(8, nextLine[7].trim()); // latitude
                 stmt.bindString(9, nextLine[8].trim()); // longitude
                 stmt.bindString(10, nextLine[9].trim()); // score
-                stmt.bindString(11, nextLine[10].trim().replace(Shops.TABELOG_PC_DOMAIN, "")); // tabelog_url
+                stmt.bindString(11, nextLine[10].trim().replace(ShopsDto.TABELOG_PC_DOMAIN, "")); // tabelog_url
                 stmt.bindString(12, ""); // tabelog_mobile_url
                 stmt.bindString(13, nextLine[12].trim()); // station
                 stmt.bindString(14, nextLine[13].trim()); // memo

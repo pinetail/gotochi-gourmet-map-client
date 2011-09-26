@@ -1,8 +1,9 @@
 package jp.pinetail.android.gotochi_gourmet_map;
 
 import jp.pinetail.android.gotochi_gourmet_map.core.AbstractGgmapActivity;
+import jp.pinetail.android.gotochi_gourmet_map.dao.ShopsDao;
+import jp.pinetail.android.gotochi_gourmet_map.dto.ShopsDto;
 import jp.pinetail.android.gotochi_gourmet_map.libs.DatabaseHelper;
-import jp.pinetail.android.gotochi_gourmet_map.libs.ShopsDao;
 import jp.pinetail.android.gotochi_gourmet_map.libs.Util;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
@@ -14,7 +15,7 @@ public class NoneActivity extends AbstractGgmapActivity {
     private DatabaseHelper dbHelper = null;
     private SQLiteDatabase db = null;
     private ShopsDao shopsDao = null;
-    private Shops info = null;
+    private ShopsDto info = null;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

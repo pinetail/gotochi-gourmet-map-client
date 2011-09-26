@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 
+import jp.pinetail.android.gotochi_gourmet_map.dto.CommentsDto;
+
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -118,11 +120,11 @@ public class XmlParserFromUrl {
         return list;
     }
 
-    public ArrayList<Comments> getComments(String is) {
-    	Comments ret = new Comments();
+    public ArrayList<CommentsDto> getComments(String is) {
+    	CommentsDto ret = new CommentsDto();
         String tmpName = null;
         int flag = 0;
-        ArrayList<Comments> list = new ArrayList<Comments>();
+        ArrayList<CommentsDto> list = new ArrayList<CommentsDto>();
         String value = new String();
 
         try {
@@ -138,7 +140,7 @@ public class XmlParserFromUrl {
                 case XmlPullParser.START_TAG:
                        if (xpp.getName().compareTo("Item") == 0) {
                            flag = 1;
-                           ret = new Comments();
+                           ret = new CommentsDto();
                        } else if (xpp.getName().compareTo("NumOfResult") == 0) {
                            flag = 2;
                        }

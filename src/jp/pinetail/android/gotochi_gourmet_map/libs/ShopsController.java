@@ -6,7 +6,7 @@ import java.net.URL;
 import java.util.ArrayList;
 
 import jp.pinetail.android.gotochi_gourmet_map.R;
-import jp.pinetail.android.gotochi_gourmet_map.Shops;
+import jp.pinetail.android.gotochi_gourmet_map.dto.ShopsDto;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.TypedArray;
@@ -32,13 +32,13 @@ public class ShopsController extends Thread {
     private final Runnable listener;
     private View scroll;
     private Context context;
-    private Shops info;
+    private ShopsDto info;
     private LayoutInflater inflater;
     private Handler mHandler = new Handler();
     private static CategoryImage category;
     public View view;
     
-    public ShopsController(Handler handler, Runnable listener, Context context, Shops info) {
+    public ShopsController(Handler handler, Runnable listener, Context context, ShopsDto info) {
         this.handler   = handler;
         this.listener  = listener;
         this.context   = context;
@@ -239,7 +239,7 @@ public class ShopsController extends Thread {
         return scroll;
     }
     
-    public Shops getShopInfo() {
+    public ShopsDto getShopInfo() {
         return info;
     }
     

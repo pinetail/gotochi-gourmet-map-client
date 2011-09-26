@@ -1,10 +1,11 @@
 package jp.pinetail.android.gotochi_gourmet_map;
 
 import jp.pinetail.android.gotochi_gourmet_map.core.AbstractGgmapActivity;
+import jp.pinetail.android.gotochi_gourmet_map.dao.ShopsDao;
+import jp.pinetail.android.gotochi_gourmet_map.dto.ShopsDto;
 import jp.pinetail.android.gotochi_gourmet_map.libs.DatabaseHelper;
 import jp.pinetail.android.gotochi_gourmet_map.libs.ImageCache;
 import jp.pinetail.android.gotochi_gourmet_map.libs.ShopsController;
-import jp.pinetail.android.gotochi_gourmet_map.libs.ShopsDao;
 import jp.pinetail.android.gotochi_gourmet_map.libs.Util;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
@@ -26,7 +27,7 @@ public class DetailActivity extends AbstractGgmapActivity implements Runnable {
     private ShopsController controller = null;
     private final Handler handler = new Handler();
     private static final Integer pressed_color = Color.argb(80, 255, 255, 255);
-    private Shops info = null;
+    private ShopsDto info = null;
    
     
     @Override

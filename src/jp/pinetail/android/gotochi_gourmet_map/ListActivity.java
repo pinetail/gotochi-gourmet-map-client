@@ -3,9 +3,10 @@ package jp.pinetail.android.gotochi_gourmet_map;
 import java.util.ArrayList;
 
 import jp.pinetail.android.gotochi_gourmet_map.core.AbstractGgmapActivity;
+import jp.pinetail.android.gotochi_gourmet_map.dao.ShopsDao;
+import jp.pinetail.android.gotochi_gourmet_map.dto.ShopsDto;
 import jp.pinetail.android.gotochi_gourmet_map.libs.DatabaseHelper;
 import jp.pinetail.android.gotochi_gourmet_map.libs.ShopsAdapter;
-import jp.pinetail.android.gotochi_gourmet_map.libs.ShopsDao;
 import yanzm.products.quickaction.lib.ActionItem;
 import yanzm.products.quickaction.lib.QuickAction;
 import android.app.Activity;
@@ -25,7 +26,7 @@ import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 
 public class ListActivity extends AbstractGgmapActivity {
-    private ArrayList<Shops> list = null;
+    private ArrayList<ShopsDto> list = null;
     private ShopsAdapter adapter = null;
     private DatabaseHelper dbHelper = null;
     private SQLiteDatabase db = null;
@@ -62,7 +63,7 @@ public class ListActivity extends AbstractGgmapActivity {
                 lat = extras.getInt("lat");
                 lng = extras.getInt("lng");
             } else {
-            	Toast.makeText(this, "現在地を取得できませんでした", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "現在地を取得できませんでした", Toast.LENGTH_SHORT).show();
             }
             list = shopsDao.find(pref, top, bottom, left, right, lat, lng, mode);
             
@@ -123,7 +124,7 @@ public class ListActivity extends AbstractGgmapActivity {
             shopNameButton.setChecked(true);
         }
         
-        
+        /*
         Button backButton = (Button) findViewById(R.id.btn_back);
         backButton.setOnClickListener(new OnClickListener() {
  
@@ -132,11 +133,12 @@ public class ListActivity extends AbstractGgmapActivity {
                 finish();
             }
         });
+        */
     }
     
     protected void init() {
-    	super.init();
-    	
+        super.init();
+        
         if (list.size() > 0) {
             ListView savedList = (ListView) findViewById(R.id.savedList);
             savedList.setFastScrollEnabled(true);
@@ -148,7 +150,7 @@ public class ListActivity extends AbstractGgmapActivity {
                 @Override
                 public void onItemClick(AdapterView<?> adapter,
                         View view, int position, long id) {
-                    final Shops item = list.get(position);
+                    final ShopsDto item = list.get(position);
                     
                     ActionItem item1 = new ActionItem();
                     item1.setTitle("地図");
@@ -189,7 +191,7 @@ public class ListActivity extends AbstractGgmapActivity {
                             
                             Intent intent1 = new Intent(ListActivity.this, DetailTabActivity.class);
                             intent1.putExtra("rowid", item.Rowid);
-                            startActivity(intent1);
+                            startActivityForResult(intent1, 1);
                         }
                     });
                     
@@ -229,6 +231,14 @@ public class ListActivity extends AbstractGgmapActivity {
                 }
             });
 
-        }    
+        }
+    }
+    
+    protected void onActivityResult(int requestCode,
+            int resultCode,Intent intent) {
+        
+        if (qa != null) {
+            qa.dismiss();
+        }
     }
 }

@@ -15,14 +15,18 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
+import java.util.UUID;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipException;
 import java.util.zip.ZipFile;
 
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.preference.PreferenceManager;
 import android.util.Log;
 
 public class Util {
@@ -187,5 +191,21 @@ public class Util {
         }
         return res;
         
+    }
+    
+    public static String getUUID(Context context) {
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
+        
+        String uuid = pref.getString("uuid", null);
+        
+        if (uuid == null) {
+            Editor editor = pref.edit();
+
+            uuid = UUID.randomUUID().toString();
+            editor.putString("uuid", uuid);
+            editor.commit();
+        }
+
+    	return uuid;
     }
 }

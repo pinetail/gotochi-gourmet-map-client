@@ -11,8 +11,6 @@
     <LinearLayout
       android:id="@+id/LinearLayout04"
       android:layout_weight="1" android:gravity="left|center_vertical" android:layout_width="wrap_content" android:layout_height="fill_parent">
-      
-    <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/btn_back" android:text="戻る" android:textColor="@color/white" android:layout_marginLeft="10dip" android:background="@drawable/btn_back_states"></Button>
 </LinearLayout>
     <LinearLayout
       android:id="@+id/LinearLayout05"

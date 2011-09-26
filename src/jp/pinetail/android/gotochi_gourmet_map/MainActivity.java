@@ -4,9 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import jp.pinetail.android.gotochi_gourmet_map.core.AbstractCoreMapActivity;
+import jp.pinetail.android.gotochi_gourmet_map.dao.ShopsDao;
+import jp.pinetail.android.gotochi_gourmet_map.dto.ShopsDto;
 import jp.pinetail.android.gotochi_gourmet_map.libs.CategoryImage;
 import jp.pinetail.android.gotochi_gourmet_map.libs.DatabaseHelper;
-import jp.pinetail.android.gotochi_gourmet_map.libs.ShopsDao;
+import jp.pinetail.android.gotochi_gourmet_map.libs.GotochiApplication;
 import jp.pinetail.android.gotochi_gourmet_map.libs.ShopsUpdateHelper;
 import jp.pinetail.android.gotochi_gourmet_map.libs.Util;
 
@@ -54,7 +56,7 @@ public class MainActivity extends AbstractCoreMapActivity {
     private DatabaseHelper dbHelper = null;
     private SQLiteDatabase db = null;
     private ShopsDao shopsDao = null;
-    private Shops point_data;
+    private ShopsDto point_data;
     private PinItemizedOverlay pinOverlay = null;
     private GestureDetector gestureDetector;
     public ShopsUpdateHelper helper;
@@ -82,10 +84,10 @@ public class MainActivity extends AbstractCoreMapActivity {
 
         ViewStub stub = (ViewStub) findViewById(R.id.mapview_stub);
         if(Util.isDeguggable(this)){
-        	Util.logging("debug");
+            Util.logging("debug");
            stub.setLayoutResource(R.layout.map4dev);
         }else{
-        	Util.logging("release");
+            Util.logging("release");
            stub.setLayoutResource(R.layout.map4prod);
         }
         View inflated = stub.inflate();
@@ -150,8 +152,8 @@ public class MainActivity extends AbstractCoreMapActivity {
                 
                 GeoPoint point = overlay.getMyLocation();
                 if (point instanceof GeoPoint) {
-	                intent.putExtra("lat", point.getLatitudeE6());
-	                intent.putExtra("lng", point.getLongitudeE6());
+                    intent.putExtra("lat", point.getLatitudeE6());
+                    intent.putExtra("lng", point.getLongitudeE6());
                 }
                 startActivityForResult(intent, 2);
             }
@@ -273,11 +275,11 @@ public class MainActivity extends AbstractCoreMapActivity {
             }
 
             ShopsDao shopsDao = new ShopsDao(db, MainActivity.this);
-            ArrayList<Shops> shops = shopsDao.find(pref, top, bottom, left, right, lat, lng, "score");
+            ArrayList<ShopsDto> shops = shopsDao.find(pref, top, bottom, left, right, lat, lng, "score");
             Util.logging(String.valueOf(shops.size()));
             if (shops.size() > 0) {
                 int i = 0;
-                for (Shops shop : shops) {
+                for (ShopsDto shop : shops) {
                     GeoPoint geoPoint = new GeoPoint((int) (shop.Lat * E6), (int) (shop.Lng * E6));
                     
                     pinOverlay = new PinItemizedOverlay(categoryImage.getDrawable(shop.Category));
@@ -343,18 +345,18 @@ public class MainActivity extends AbstractCoreMapActivity {
             checkUpdate();
             break;
         case 3:
-        	
-        	LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            
+            LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
             new AlertDialog.Builder(this)
             .setView(inflater.inflate(R.layout.post_description, null))
             .setPositiveButton("登録する", new DialogInterface.OnClickListener() {
 
                 public void onClick(DialogInterface dialog, int which) {
-	                Intent intent = new Intent(); 
-	                intent.setAction(Intent.ACTION_VIEW); 
-	                intent.setData(Uri.parse(TABELOG_SMARTPHONE_URL)); 
-	                startActivity(intent);
+                    Intent intent = new Intent(); 
+                    intent.setAction(Intent.ACTION_VIEW); 
+                    intent.setData(Uri.parse(TABELOG_SMARTPHONE_URL)); 
+                    startActivity(intent);
                 }
                 
             })
@@ -446,7 +448,7 @@ public class MainActivity extends AbstractCoreMapActivity {
                 synchronized (lock) {
                     if (helper.downloadUpdateCsv(mProgressDialog) == true) {
                         
-                        db = dbHelper.getWritableDatabase();
+                    	SQLiteDatabase db = dbHelper.getWritableDatabase();
                         Util.logging(helper.getShopFileName());
                         if (isInterrupted() == false) {
                             if (dbHelper.updateShops(db, helper.getShopFileName(), mProgressDialog) == true) {
@@ -464,6 +466,9 @@ public class MainActivity extends AbstractCoreMapActivity {
                             }
                         } else {
                             tmp_msg = null;
+                        }
+                        if (db instanceof SQLiteDatabase && db.isOpen()) {
+                            db.close();
                         }
                     } else {
                         tmp_msg = helper.msg;
@@ -531,6 +536,29 @@ public class MainActivity extends AbstractCoreMapActivity {
             checkUpdate();
             setState(PREFERENCE_BOOTED);
         }
+        
+        GotochiApplication app = (GotochiApplication) this.getApplication();
+        
+        double lat = app.getLat();
+        double lng = app.getLng();
+        
+        if (lat != 0 && lng != 0) {
+            GeoPoint point = new GeoPoint(
+                    (int) ((double) lat * E6),
+                    (int) ((double) lng * E6));
+            mMapController.animateTo(point, new Runnable() {
+				
+				@Override
+				public void run() {
+		            drawShops();
+				}
+			});
+
+            app.setLat(0);
+            app.setLng(0);
+
+        }
+        
     }
     
     @Override
@@ -543,7 +571,7 @@ public class MainActivity extends AbstractCoreMapActivity {
     public class PinItemizedOverlay extends ItemizedOverlay<PinOverlayItem> implements Runnable {
 
         private List<GeoPoint> points = new ArrayList<GeoPoint>();
-        private List<Shops> shops = new ArrayList<Shops>();
+        private List<ShopsDto> shops = new ArrayList<ShopsDto>();
         private LayoutInflater inflater;
 
         public PinItemizedOverlay(Drawable defaultMarker) {
@@ -571,7 +599,7 @@ public class MainActivity extends AbstractCoreMapActivity {
             populate();
         }
                         
-        public void setShop(Shops point) {
+        public void setShop(ShopsDto point) {
             this.shops.add(point);
         }
         

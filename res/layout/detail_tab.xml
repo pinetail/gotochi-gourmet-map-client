@@ -11,11 +11,17 @@
     android:layout_alignParentTop="true" android:background="@drawable/button_bar">
     <LinearLayout
       android:id="@+id/LinearLayout04"
-      android:layout_weight="1" android:gravity="left|center_vertical" android:layout_height="fill_parent" android:layout_width="fill_parent"><Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/white" android:id="@+id/btn_back" android:background="@drawable/btn_back_states" android:layout_marginLeft="10dip" android:text="@string/btn_label_back"></Button>
+      android:layout_weight="1" android:gravity="left|center_vertical" android:layout_height="fill_parent" android:layout_width="fill_parent">
+        <TextView android:layout_width="wrap_content" 
+              android:singleLine="true"
+		      android:ellipsize="marquee"
+		      android:marqueeRepeatLimit="1"
+		      android:focusable="true"
+		      android:focusableInTouchMode="true"
+        android:layout_height="wrap_content" android:textAppearance="?android:attr/textAppearanceMedium" android:paddingLeft="5dip" android:id="@+id/txt_shop_name" android:text=""></TextView>
 </LinearLayout>
-<LinearLayout android:id="@+id/LinearLayout01" android:layout_weight="1" android:layout_width="fill_parent" android:layout_height="fill_parent" android:gravity="center">
-</LinearLayout>
-  <LinearLayout android:id="@+id/LinearLayout03" android:layout_width="fill_parent" android:layout_weight="1" android:gravity="right|center_vertical" android:layout_height="fill_parent">
+  <LinearLayout android:id="@+id/LinearLayout03" android:layout_weight="1" android:gravity="right|center_vertical" android:layout_height="fill_parent" android:layout_width="90dp">
+      <ImageView android:layout_width="wrap_content" android:src="@drawable/icon_favorities_add" android:id="@+id/img_favorite" android:layout_height="match_parent" android:paddingRight="5dip" android:paddingLeft="5dip"></ImageView>
   </LinearLayout></LinearLayout>
 <TabHost 
     android:id="@android:id/tabhost"

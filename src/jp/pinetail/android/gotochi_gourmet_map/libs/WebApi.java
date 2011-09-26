@@ -6,12 +6,15 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
+import jp.pinetail.android.gotochi_gourmet_map.dto.CategoriesDto;
 
-import org.apache.http.*;
-import org.apache.http.client.*;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -30,7 +33,19 @@ public class WebApi {
         if (response.getStatusLine().getStatusCode() < 400) {
             return response.getEntity().getContent();
         } else {
-            return null;
+            throw new ClientProtocolException();
+        }
+    }
+    
+    public static InputStream requestHttpInputStream(HttpUriRequest request)
+    throws ClientProtocolException, IOException {
+        HttpClient client = new DefaultHttpClient();
+        HttpResponse response = client.execute(request);
+        Util.logging(String.valueOf(response.getStatusLine().getStatusCode()));
+        if (response.getStatusLine().getStatusCode() < 400) {
+            return response.getEntity().getContent();
+        } else {
+            throw new ClientProtocolException();
         }
     }
     
@@ -62,9 +77,9 @@ public class WebApi {
         return null;
     }
     
-    public static ArrayList<Categories> getCategories(String url) {
+    public static ArrayList<CategoriesDto> getCategories(String url) {
         
-        ArrayList<Categories> categories = new ArrayList<Categories>();
+        ArrayList<CategoriesDto> categories = new ArrayList<CategoriesDto>();
         InputStream in = null;
         try {
             in = getHttpInputStream(url);
@@ -82,7 +97,7 @@ public class WebApi {
                 JSONObject jsonCategories = jsonArray.getJSONObject(i);
                 JSONObject jsonCategory = jsonCategories.getJSONObject("category");
                 
-                Categories category = new Categories();
+                CategoriesDto category = new CategoriesDto();
                 category.name       = jsonCategory.getString("name");
                 category.prefecture = jsonCategory.getString("prefecture");
                 categories.add(category);
@@ -100,5 +115,33 @@ public class WebApi {
         }
         
         return categories;
+    }
+    
+    public static boolean requestGgmapServer(HttpUriRequest url) {
+        
+        InputStream in = null;
+        boolean res = false;
+        try {
+            in = requestHttpInputStream(url);
+            InputStreamReader objReader = new InputStreamReader(in);
+            BufferedReader objBuf = new BufferedReader(objReader);
+            StringBuilder objJson = new StringBuilder();
+            String sLine;
+            while((sLine = objBuf.readLine()) != null){
+                objJson.append(sLine);
+            }
+            Util.logging(objJson.toString());
+            JSONArray jsonArray = new JSONArray(objJson.toString());
+            in.close();
+            
+        } catch (ClientProtocolException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        
+        return res;
     }
 }

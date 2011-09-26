@@ -17,5 +17,6 @@
     <string name="basic_auth_passwd">dmQveqBY</string>
     <string name="dialog_message_posting_data">通信中</string>
     <string name="tabelog_url">http://s.tabelog.com/</string>
+    <string name="ggmap_url">http://ggmap.pinetail.jp/</string>
     
 </resources>

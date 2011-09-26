@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 
 import jp.pinetail.android.gotochi_gourmet_map.R;
-import jp.pinetail.android.gotochi_gourmet_map.Shops;
+import jp.pinetail.android.gotochi_gourmet_map.dto.ShopsDto;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Typeface;
@@ -18,10 +18,10 @@ import android.widget.TextView;
 
 public class ShopsAdapter extends ArrayAdapter {
   
-    private ArrayList<Shops> items;
+    private ArrayList<ShopsDto> items;
     private LayoutInflater inflater;
     private Context context;
-    private Shops item;
+    private ShopsDto item;
     private String[] favList;
     private DatabaseHelper dbHelper = null;
     private SQLiteDatabase db = null;
@@ -29,7 +29,7 @@ public class ShopsAdapter extends ArrayAdapter {
     private static CategoryImage category;
 
     
-    public ShopsAdapter(Context context, int textViewResourceId, ArrayList<Shops> items) {
+    public ShopsAdapter(Context context, int textViewResourceId, ArrayList<ShopsDto> items) {
         super(context, textViewResourceId, items);
         this.items = items;
         this.context = context;
@@ -74,7 +74,7 @@ public class ShopsAdapter extends ArrayAdapter {
         }
 
         // 表示すべきデータの取得
-        item = (Shops)items.get(position);
+        item = (ShopsDto)items.get(position);
       
         if (item != null) {
 
