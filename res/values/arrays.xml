@@ -37,6 +37,9 @@
     <item>fukushima_sauce_katsudon</item>
     <item>ishikawa_hanton_rice</item>
     <item>ooita_beppureimen</item>
+    <item>tochigi_utunomiya_gyoza</item>
+    <item>shizuoka_hamamatsu_gyoza</item>
+    <item>shimane_izumosoba</item>
   </string-array>
   <string-array name="list_category_name">
 <!--     <item>札幌ラーメン</item>  -->
@@ -75,6 +78,9 @@
     <item>会津ソースカツ丼</item>
     <item>ハントンライス</item>
     <item>別府冷麺</item>
+    <item>宇都宮餃子</item>
+    <item>浜松餃子</item>
+    <item>出雲そば</item>
   </string-array>
   
   

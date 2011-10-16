@@ -38,6 +38,10 @@
         <CheckBoxPreference android:key="fukushima_sauce_katsudon"
             android:title="ソースカツ丼" android:defaultValue="true" />
     </PreferenceCategory>
+    <PreferenceCategory android:title="栃木県" android:key="tochigi">
+        <CheckBoxPreference android:key="tochigi_utunomiya_gyoza"
+            android:title="宇都宮餃子" android:defaultValue="true" />
+    </PreferenceCategory>
     <PreferenceCategory android:title="群馬県" android:key="gunma">
         <CheckBoxPreference android:key="gunma_mizusawa_udon"
             android:title="水沢うどん" android:defaultValue="true" />
@@ -63,6 +67,8 @@
     <PreferenceCategory android:title="静岡県" android:key="shizuoka">
         <CheckBoxPreference android:key="shizuoka_oden"
             android:title="静岡おでん" android:defaultValue="true" />
+        <CheckBoxPreference android:key="shizuoka_hamamatsu_gyoza"
+            android:title="浜松餃子" android:defaultValue="true" />
         <CheckBoxPreference android:key="shizuoka_fujinomiya_yakisoba"
             android:title="富士宮やきそば" android:defaultValue="true" />
     </PreferenceCategory>
@@ -89,6 +95,10 @@
     <PreferenceCategory android:title="高知県" android:key="kochi">
         <CheckBoxPreference android:key="kochi_suzaki_nabeyaki_ramen"
             android:title="須崎鍋焼きラーメン" android:defaultValue="true" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="島根県" android:key="shimane">
+        <CheckBoxPreference android:key="shimane_izumosoba"
+            android:title="出雲そば" android:defaultValue="true" />
     </PreferenceCategory>
     <PreferenceCategory android:title="岡山県" android:key="okayama">
         <CheckBoxPreference android:key="okayama_tsuyama_horumon_udon"

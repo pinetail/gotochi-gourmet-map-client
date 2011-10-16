@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen
   xmlns:android="http://schemas.android.com/apk/res/android">
-  <PreferenceScreen android:title="ジャンル">
+  <PreferenceCategory android:title="設定">
+    <CheckBoxPreference
+      android:key="check_update"
+      android:title="最新データチェック"
+      android:summary="アプリ起動時に最新データのチェックを行います"
+      android:defaultValue="true" />
+  </PreferenceCategory>
+  <PreferenceCategory android:title="検索条件">
+    <PreferenceScreen android:title="ジャンル">
      <intent  
           android:action="android.intent.action.MAIN"  
           android:targetPackage="jp.pinetail.android.gotochi_gourmet_map"  
           android:targetClass="jp.pinetail.android.gotochi_gourmet_map.SettingsCategoryActivity" >
      </intent>    
-  </PreferenceScreen>
+    </PreferenceScreen>
+  </PreferenceCategory>
 </PreferenceScreen>

@@ -1,5 +1,6 @@
 package jp.pinetail.android.gotochi_gourmet_map;
 
+import jp.pinetail.android.gotochi_gourmet_map.libs.Util;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
@@ -95,10 +96,10 @@ public class LocationOverlay extends MyLocationOverlay {
     	case LocationProvider.AVAILABLE:
     		break;
     	case LocationProvider.OUT_OF_SERVICE:
-    		Toast.makeText(context, "GPSサービスが利用できません", Toast.LENGTH_LONG).show();
+    		Util.logging("GPSサービスが利用できません");
     		break;
     	case LocationProvider.TEMPORARILY_UNAVAILABLE:
-    		Toast.makeText(context, "GPSデータを取得できません", Toast.LENGTH_LONG).show();
+    		Util.logging("GPSデータを取得できません");
     		break;
     	}
     }
